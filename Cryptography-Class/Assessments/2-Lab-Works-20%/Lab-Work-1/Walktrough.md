@@ -22,6 +22,7 @@ Performed an initial scan to discover open services.
 ```bash
 nmap -p 21,23,22,80 <target-ip> 
 ```
+
    ![alt text](Screenshots/nmap.png)
 
 ---
@@ -31,8 +32,11 @@ Since ports (21,23,22,80) are open, used enum4linux to gather more usernames.
 ```bash
 enum4linux -a <target-ip> 
 ```
+
    ![alt text](Screenshots/enum4linux1.png)
+
    ![alt text](Screenshots/enum4linux2.png) 
+
    ![alt text](Screenshots/enum4linux3.png)
 
 ---
@@ -84,6 +88,7 @@ Command to attack FTP:
 ```bash
 hydra -L userlist.txt -P passlist.txt ftp://<TARGET_IP> -V
 ```
+
    ![alt text](Screenshots/hydra_ftp.png)
 
 ## 🔹 2.2 Telnet Brute Force with Hydra
@@ -91,6 +96,7 @@ Command to attack Telnet:
 ```bash
 hydra -L userlist.txt -P passlist.txt telnet://<TARGET_IP> -V
 ```
+
    ![alt text](Screenshots/hydra_telnet.png)
 
 ## 🔹 2.3 SSH Brute Force with NetExec
@@ -98,22 +104,27 @@ Command to attack SSH:
 ```bash
 nxc ssh <TARGET_IP> -u userlist.txt -p passlist.txt
 ```
+
    ![alt text](Screenshots/nxc_ssh.png)
 
 ## 🔹 2.4 HTTP Login Brute Force Using Burp Suite Intruder
 
 ### Step 1: Install FoxyProxy Extension
-- **Open `Mozilla Firefox Browser`.**
+- **Open `Firefox Browser`.**
 - **Go to `extension` and search `FoxyProxy`.**
 - **Choose the `FoxyProxy Standard` extension and click `Add to Firefox`.**
 - **Go to `FoxyProxy extension > Options > Proxies`.**
-- **Set the `Title:foxyproxy, Hostname:127.0.0.1, Port:8080` and click `Save`.**
+- **Set the `Title = foxyproxy, Hostname = 127.0.0.1, Port = 8080` and click `Save`.**
 - **Go to `FoxyProxy extension` and click `foxyproxy`.**
 
    ![alt text](Screenshots/foxyproxy1.png)
+
    ![alt text](Screenshots/foxyproxy2.png)
+
    ![alt text](Screenshots/foxyproxy3.png)
+
    ![alt text](Screenshots/foxyproxy4.png)
+
    ![alt text](Screenshots/foxyproxy5.png)
 
 ### Step 2: Launch Burp’s Browser
@@ -125,49 +136,51 @@ nxc ssh <TARGET_IP> -u userlist.txt -p passlist.txt
    ![alt text](Screenshots/burp1.png)
 
 ### Step 3: Search Ip Address Metasploitable2
-- Open Firefox browser.
-- Search the <TARGET_IP> and click Enter.
-- Then, click the DVWA section.
-- Fill the Username = 'Admin' and Password = 'Password'.
-- At the left, choose Brute Force.
-- Fill anything to the Username and Password (Example: Username=aaa and Password=aaa).
+- **Open `Firefox Browser`.**
+- **Search the <TARGET_IP> and click Enter.**
+- **Then, click the `DVWA section`.**
+- **Fill the `Username = admin` and `Password = password`.**
+- **Left-side, choose `Brute Force`.**
+- **Fill anything to the `Username` and `Password`.`(Example: Username=aaa and Password=aaa)`**
 
-![image](https://github.com/user-attachments/assets/38f00c6b-9bec-45e0-b9d8-6926866fc284)
-![image](https://github.com/user-attachments/assets/fa27b23c-2c67-4436-b676-f88cf55ab4b3)
-![image](https://github.com/user-attachments/assets/ff3072a6-2c80-45bf-8b6a-a07c3cfe6e4d)
+   ![alt text](Screenshots/dvwa1.png)
 
-### Step 3: Forward the Request
-- In Burp’s `Proxy > Intercept` tab, Everytime the intercept get request keep click **Forward** to send the intercepted request.
-- If multiple requests are caught, continue forwarding until the page loads.
-- Go to `Proxy > HTTP history` tab, and find `http://192.168.65.54/dvwa/vulnerabilities/brute/?username=aaa&password=aaa&Login=Login` then right click and choose **Send to Intruder**.
+   ![alt text](Screenshots/dvwa2.png)
 
-![image](https://github.com/user-attachments/assets/27aba17b-6817-427c-8e4b-419684b89047)
+   ![alt text](Screenshots/dvwa3.png)
 
-### Step 4: Disable Intercept
-- Switch **Intercept is OFF** so that future browser requests are not paused.
+### Step 4: Forward the Request
+- **In Burp’s `Proxy > Intercept`.**
+- **Always click `Forward`.**
+- **If multiple requests are caught, continue forwarding until the page loads.**
+- **Go to `Proxy > HTTP history`.** 
+- **Find request`GET /dvwa/vulnerabilities/brute/?username=aaa&password=aaa&Login=Login HTTP\1.1`. Then, right click and choose `Send to Intruder`.**
 
-![image](https://github.com/user-attachments/assets/f384e277-e41a-4d23-9105-0d203cb00d6e)
+ ![alt text](Screenshots/burp2.png)
 
-### Step 5: Configure the Intruder Attack
-- In **Intruder** tab:
-  - Set **Attack Type** to **Cluster Bomb**.
-  - Highlight and mark the username and password fields as **payload positions**.
-  - On the **Payload position**, Load with the file in the with the **Username list** (`userlist.txt`) and **Password list** (`passlist.txt`). (`Example:/usr/share/wordlists`)
+ ![alt text](Screenshots/burp3.png)
 
-![image](https://github.com/user-attachments/assets/b2962371-7934-4a79-90ff-dd05b0adb37d)
+### Step 5: Disable Intercept
+- **Switch `Intercept is OFF` so that future browser requests are not paused.**
 
-### Step 6: Start Attack
-- Click **Start Attack**.
-- Monitor for:
-  - Changes in **Response**.
-  - Click the **Render** for visual output.
-  - There are `25 request`. So, you need to try and error untuil you find the correct output.
-  - If the access successful the output will be `Welcome to the password protected area admin`.
-  - If not, the output will be `Username and/or password incorrect`.
+ ![alt text](Screenshots/burp4.png)
 
-![image](https://github.com/user-attachments/assets/3312dc4f-a720-4339-b1a1-db4c4133eac3)
-![image](https://github.com/user-attachments/assets/89705868-51e3-41cb-af80-cc513af07cce)
-![image](https://github.com/user-attachments/assets/915c2834-0a01-4c65-8111-9d1d6ecce0dd)
+### Step 6: Configure the Intruder Attack
+- **Go to `Intruder > Attack Type > Cluster Bomb `.**
+- **Highlight and mark the username and password fields as payload positions.**
+- **On the `Payload position`, Load with the file in the with the Username list `(userlist.txt)` and Password list `(passlist.txt)`.**
+
+ ![alt text](Screenshots/burp5.png)
+
+### Step 7: Start Attack
+- **Click `Start Attack`.**
+- **Go to `Response > Render`.**
+- **Try & error each output.**
+- **Valid login output `Welcome to the password protected area admin`.**
+- **Invalid login Output `Username and/or password incorrect`.**
+
+ ![alt text](Screenshots/burp6.png)
+ ![alt text](Screenshots/burp7.png)
 
 ---
 
