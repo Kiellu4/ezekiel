@@ -103,12 +103,13 @@ nxc ssh <TARGET_IP> -u userlist.txt -p passlist.txt
 ## 🔹 2.4 HTTP Login Brute Force Using Burp Suite Intruder
 
 ### Step 1: Install FoxyProxy Extension
-- Open **Mozilla Firefox Browser.**
-- Go to **extension** and search **FoxyProxy.**
-- Choose the **FoxyProxy Standard** extension and click **Add to Firefox.**
-- Go to `FoxyProxy extension > Options > Proxies`.
-- Fill in the **Title:foxyproxy, Hostname:127.0.0.1, Port:8080** and click **Save.**
-- Go to **FoxyProxy extension** and click **foxyproxy.**
+- **Open `Mozilla Firefox Browser`.**
+- **Go to `extension` and search `FoxyProxy`.**
+- **Choose the `FoxyProxy Standard` extension and click `Add to Firefox`.**
+- **Go to `FoxyProxy extension > Options > Proxies`.**
+- **Set the `Title:foxyproxy, Hostname:127.0.0.1, Port:8080` and click `Save`.**
+- **Go to `FoxyProxy extension` and click `foxyproxy`.**
+
    ![alt text](Screenshots/foxyproxy1.png)
    ![alt text](Screenshots/foxyproxy2.png)
    ![alt text](Screenshots/foxyproxy3.png)
@@ -116,14 +117,14 @@ nxc ssh <TARGET_IP> -u userlist.txt -p passlist.txt
    ![alt text](Screenshots/foxyproxy5.png)
 
 ### Step 2: Launch Burp’s Browser
-- Open **Burp Suite**.
-- Go to `Proxy > Intercept`.
-- Ensure **Intercept is ON**.
-- Click **Open Browser** to start Burp’s embedded browser.
+- **Open `Burp Suite`.**
+- **Go to `Proxy > Intercept`.**
+- **Ensure `Intercept is ON`.**
+- **Click `Open Browser` to start Burp’s embedded browser.**
 
-![image](https://github.com/user-attachments/assets/903de471-2a8b-4ab8-809c-e6a17351adbc)
+   ![alt text](Screenshots/burp1.png)
 
-### Step 2: Search Ip Address Metasploitable2
+### Step 3: Search Ip Address Metasploitable2
 - Open Firefox browser.
 - Search the <TARGET_IP> and click Enter.
 - Then, click the DVWA section.
