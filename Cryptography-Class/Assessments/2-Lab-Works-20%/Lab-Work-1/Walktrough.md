@@ -12,7 +12,7 @@ The purpose of this lab is to simulate brute force attacks against common networ
 
 ---
 
-# 🧾 Task 1: Enumerate the Target
+## 🧾 Task 1: Enumerate the Target
 
 ## 🎯 Goal
 Identify valid usernames on the target VM.
@@ -41,7 +41,7 @@ enum4linux -a <target-ip>
 
 ---
 
-# 🔐 Task 2: Brute Force Attacks
+##  🔐 Task 2: Brute Force Attacks
 
 ## ✅ Preparation
 
@@ -67,12 +67,12 @@ user
 test
 ```
 
-- **Password list:** 
+- **Password list** 
 ```bash
 touch passlist.txt
 vim passlist.txt
 ```
-   - **Insert in passlist.txt:**
+   - **Insert in passlist.txt**
 ```bash
 1234
 msfadmin
@@ -138,8 +138,9 @@ nxc ssh <TARGET_IP> -u userlist.txt -p passlist.txt
 ### Step 3: Search Ip Address Metasploitable2
 - **Open `Firefox Browser`.**
 - **Search the <TARGET_IP> and click Enter.**
-- **Then, click the `DVWA section`.**
+- **Click the `DVWA section`.**
 - **Fill the `Username = admin` and `Password = password`.**
+- **Left-side, change `DVWA Security > High-Low > Submit`.**
 - **Left-side, choose `Brute Force`.**
 - **Fill anything to the `Username` and `Password`.`(Example: Username=aaa and Password=aaa)`**
 
@@ -180,90 +181,85 @@ nxc ssh <TARGET_IP> -u userlist.txt -p passlist.txt
 - **Invalid login Output `Username and/or password incorrect`.**
 
  ![alt text](Screenshots/burp6.png)
+
  ![alt text](Screenshots/burp7.png)
 
 ---
 
-# 📡 Task 3: Sniffing Network Traffic
-
+## 📡 Task 3: Sniffing Network Traffic
 Captured network traffic during login attempts with cracked credentials.
+**Tool Used: Wireshark** 
 
-**Tool Used:** Wireshark
-
----
-
-## 🔹 Steps
-1. Open Wireshark.
-> **Command:** 
+## Step 1: Open Wireshark.
+- **Command:**
 ```bash
-wireshark
+sudo wireshark
 ```
-  - Choose `eth0` for sniffing traffic.
-> ![image](https://github.com/user-attachments/assets/1ed5a265-d331-452b-97ad-7ddc0aa411ff)
+- **Choose `eth0` for sniffing traffic.**
+   ![alt text](Screenshots/wireshark.png)
 
-2. Start capture on the network interface connected to the target for the FTP.
-   - (1) FTP command:
+## Step 2: Start capture on the network interface connected to the target for the FTP.
+- **Command:**
 ```bash
 ftp <target-ip> 
 ```
-   - Enter the `Username = msfadmin` and `Password = msfadmin` as we got exploit from brute force attack before.
+- **Enter the `Username = msfadmin` and `Password = msfadmin`.**
+   ![alt text](Screenshots/ftp1.png)
 
-> ![image](https://github.com/user-attachments/assets/27f207e0-16f9-46ca-b0d4-d9377f1f90bf)
+## Step 3: Filter FTP packet.
+- **Command:**
+```bash
+tcp.stream eq 0
+```
+- **Right click any packet and select `Follow > TCP Stream`.**
+   ![alt text](Screenshots/ftp2.png) 
 
-3. Get the FTP packet for FTP.
-   - Choose the first one packet that have `FTP` and right click.
-   - Go to `Follow` and click `TCP Stream`.
-> ![image](https://github.com/user-attachments/assets/18e1ff89-99a4-4991-9578-44e845c4fc92)
+## Step 4: Identify unencrypted traffic containing credentials for the FTP.
+- **FTP sniffed:**
+   - Info: The service is `vsFTPd 2.3.4` and logged in as `msfadmin/msfadmin`.
+   ![alt text](Screenshots/ftp3.png) 
 
-4. Identify unencrypted traffic containing credentials for the FTP.
-   - **FTP sniffed:**
-   - As you can see, the file is not encrypted.
-
-> ![image](https://github.com/user-attachments/assets/234116f3-3afc-47a8-9764-93437bebf2b8)
-
-5. Start capture on the network interface connected to the target for the SSH.
-   - (2) SSH command:
+## Step 5: Start capture on the network interface connected to the target for the SSH.
+- **Command:**
 ```bash
 ssh -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa <username>@<target-ip> 
 ```
-   - Enter the `Username = msfadmin` and `Password = msfadmin` as we got exploit from brute force attack before.
+- **Enter the `Password = msfadmin`.**
+![alt text](Screenshots/ssh1.png)
 
-> ![image](https://github.com/user-attachments/assets/cdd503c0-0aa4-4b2a-ab51-47e538aa65f9)
+## Step 6: Filter SSH packet.
+- **Command:**
+```bash
+tcp.stream eq 1
+```
+- **Right click any packet and select `Follow > TCP Stream`.**
+![alt text](Screenshots/ssh2.png)
 
-6. Get the FTP packet for the SSH.
-   - Choose the new one packet until last that have `FTP` and right click.
-   - For me, I choose packet at `no.78` because packet 1-74 for FTP.
-   - Go to `Follow` and click `TCP Stream`.
+## Step 7: Identify unencrypted traffic containing credentials for the SSH.
+- **SSH sniffed:**
+   - Info: The client version is `SSH‑2.0‑OpenSSH_4.7p1 Debian-8ubuntu1` and encrypted with `weaker hashing` than server.
+   ![alt text](Screenshots/ssh3.png) 
 
-> ![image](https://github.com/user-attachments/assets/a03564e9-0555-4b55-bbad-b7e10c407053)
-
-7. Identify unencrypted traffic containing credentials for the SSH.
-   - **SSH sniffed:**
-   - As you can see, the file is encrypted.
-     
-> ![image](https://github.com/user-attachments/assets/3febb274-a848-4800-9026-0bfb7e6e89bc)
-
-8. Start capture on the network interface connected to the target for the Telnet.
-   - (3) Telnet command:
+## Step 8: Start capture on the network interface connected to the target for the Telnet.
+- **Command:**
 ```bash
 telnet <target-ip> 
 ```
-   - Enter the `Username = msfadmin` and `Password = msfadmin` as we got exploit from brute force attack before.
+- **Enter the `Username = msfadmin` and `Password = msfadmin`.**
+   ![alt text](Screenshots/telnet1.png) 
 
-> ![image](https://github.com/user-attachments/assets/375398e4-f50b-4907-b557-1fd5d98be295)
+## Step 9: Filter Telnet packet.
+- **Command:**
+```bash
+tcp.stream eq 3
+```
+- **Right click any packet and select `Follow > TCP Stream`.**
+   ![alt text](Screenshots/telnet2.png) 
 
-9. Get the FTP packet for the SSH.
-   - Choose the new one packet until last that have `FTP` and right click.
-   - For me, I choose packet at `no.78` because packet 1-74 for FTP.
-   - Go to `Follow` and click `TCP Stream`.
-  
-> ![image](https://github.com/user-attachments/assets/0812d0bd-574a-4268-865a-2447855ead7e)
-
-10. Identify unencrypted traffic containing credentials for the SSH.
-   - **Telnet sniffed:**
-   - As you can see, the file is not encrypted. 
-
-> ![image](https://github.com/user-attachments/assets/9ff0a3b6-b908-4ce2-8363-f4d4b42100b3)
+## Step 10: Identify unencrypted traffic containing credentials for the SSH.
+**Telnet sniffed:**
+   - Info: Default credential `msfadmin/msfadmin` and Telnet sends everything in `cleartext`.
+   ![alt text](Screenshots/telnet3.png) 
 
 ---
 
