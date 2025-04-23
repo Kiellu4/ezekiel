@@ -51,9 +51,10 @@ cd /usr/share/wordlists
 
 - **Username list** 
 ```bash
-touch touch userlist.txt
+touch userlist.txt
 vim userlist.txt  
 ```
+   - **Insert in userlist.txt**
 ```
 admin
 msfadmin
@@ -67,7 +68,7 @@ test
 touch passlist.txt
 vim passlist.txt
 ```
-
+   - **Insert in passlist.txt**
 ```
 1234
 msfadmin
