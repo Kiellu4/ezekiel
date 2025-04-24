@@ -2,6 +2,7 @@
 **Cracking Weak Password Hashes and Exploiting Poor Authentication in Databases**  
 **Author:** Adli Jaafar  
 **Date:** Apr 13  
+**Due Date:** Apr 25  
 **Total Points:** 100  
 **Time Allocation:** 3 Hours  
 **Total Marks:** 15  
