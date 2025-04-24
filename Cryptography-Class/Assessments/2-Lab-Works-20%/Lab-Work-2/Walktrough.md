@@ -29,14 +29,14 @@ Identify the running database service and gain access from Kali Linux.
 nmap -sS <target-ip>
 ```
 
-    ![alt text](Screenshots/nmap.png)
+![alt text](Screenshots/nmap.png)
 
 - Connect with target open database (mysql on port:3306 & portgresql on port:5432). 
 ```bash
 mysql -h <target-ip> -u root 
 ```
 
-    ![alt text](Screenshots/mysql1.png) 
+![alt text](Screenshots/mysql1.png) 
     - Error
 
 - sbb salah saya rujuk -h. 
@@ -44,14 +44,14 @@ mysql -h <target-ip> -u root
 mysql --help | grep -i ssl  
 ```
 
-    ![alt text](Screenshots/mysql2.png)
+![alt text](Screenshots/mysql2.png)
 
 - gunakan command yang betul. 
 ```bash
 mysql -h 192.168.21.133 -u root --skip-ssl  
 ```
 
-    ![alt text](Screenshots/mysql3.png)
+![alt text](Screenshots/mysql3.png)
 
 ---
 
