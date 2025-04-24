@@ -24,14 +24,14 @@ Identify the running database service and gain access from Kali Linux.
 ---
 
 ## 🔹 1.1 Nmap scan 
-- Scan to identify open database service.
+- **Scan to identify open database service.**
 ```bash
 nmap -sV <target-ip>
 ```
 
 ![alt text](Screenshots/nmap.png) 
 
-- Connect with target open database (mysql on port:3306 & portgresql on port:5432). 
+- **Connect with target open database (mysql on port:3306 & portgresql on port:5432).** 
 ```bash
 mysql -h <target-ip> -u root 
 ```
@@ -39,15 +39,15 @@ mysql -h <target-ip> -u root
 ![alt text](Screenshots/mysql1.png) 
 - Error found: `ERROR 2026 (HY000): TLS/SSL error: wrong version number`.
 
-- Referring from `mysql --help`. 
+- **Referring from `mysql --help`.**
 ```bash
 mysql --help | grep -i ssl  
 ```
-- Fix the command using: `--skip-ssl` command.
 
 ![alt text](Screenshots/mysql2.png) 
+- Fix the command using: `--skip-ssl`.
 
-- Troubleshooting error with the fix command. 
+- **Troubleshooting error with the fix command.** 
 ```bash
 mysql -h <target-ip> -u root --skip-ssl  
 ```
@@ -58,14 +58,13 @@ mysql -h <target-ip> -u root --skip-ssl
 
 ## ⚠️ Problems Encountered  
 
-| Problem                       | Solution                                |
+| Problem                      | Solution                                 |
 |------------------------------|------------------------------------------|
-| Access denied on default user| Tried login with no password, found open account |
-| Unknown database error       | Specified a known DB name from previous enumeration |
-
+| TLS/SSL error | --skip-ssl |
+- Explanation: This error occurs due to an SSL/TLS version mismatch between the client and server. Alternatively, it may happen if the service does not support SSL/TLS at all. To resolve this, you can disable SSL by using the `--skip-ssl` option in your connection command.
 ---
 
-# 🧾 Task 2: User Enumeration & Authentication Flaws  
+## 🧾 Task 2: User Enumeration & Authentication Flaws  
 
 ## 🎯 Goal  
 Find users with no passwords or weak authentication mechanisms.
@@ -73,13 +72,21 @@ Find users with no passwords or weak authentication mechanisms.
 ---
 
 ## 🛠️ Steps  
-1. Connected to the database successfully.  
-2. Queried user table:  
+1. Connected to the database (DVWA). 
 ```sql
-SELECT user, password FROM mysql.user;
+USE dvwa
+```
+2. show tables in DVWA. 
+```sql
+SHOW TABLES;
 ```
 
-![image](https://github.com/user-attachments/assets/example-userenum.png)
+3. Queried user table:  
+```sql
+SELECT * FROM users;
+```
+
+![alt text](Screenshots/dvwa.png)
 
 ---
 
@@ -89,7 +96,7 @@ SELECT user, password FROM mysql.user;
 
 ---
 
-# 🔐 Task 3: Password Hash Discovery & Hash Type Identification  
+## 🔐 Task 3: Password Hash Discovery & Hash Type Identification  
 
 ## 🎯 Goal  
 Extract and identify password hashes stored in the database.
@@ -100,18 +107,29 @@ Extract and identify password hashes stored in the database.
 1. Listed all databases:  
 ```sql
 SHOW DATABASES;
-USE <vulnerable_db>;
+USE dvwa;
 ```
+
+![alt text](<Screenshots/hashes1.png>)
 
 2. Found table with credentials:  
 ```sql
+SHOW TABLES;
 SELECT * FROM users;
 ```
 
-3. Extracted hashes:  
+![alt text](Screenshots/hashes2.png)
+- Select `any password > right click > copy` and type **exit** command. (example: `5f4dcc3b5aa765d61d8327deb882cf99`)
+
+3. Extracted hashes: 
+- Go to any directory. (`cd Downloads`) 
 ```bash
-cat hashes.txt
+touch hashes.txt
+vim hashes.txt
 ```
+
+![alt text](Screenshots/hashes3.png) ![alt text](Screenshots/hashes4.png)
+- Paste the `password`, **save** and **exit**.
 
 4. Identified hash type:  
 ```bash
@@ -122,17 +140,23 @@ or
 hash-identifier
 ```
 
-![image](https://github.com/user-attachments/assets/example-hash-id.png)
+![alt text](Screenshots/hashes5.png)
+- Key Findings:
+    - 32-character hexadecimal string (digits 0-9 and lowercase letters a-f).
+    - No special characters (no *, $, colons, etc.)—just the raw hash value.
+    - Typically stored in lowercase, though uppercase is also valid (MD5 is case-insensitive).
+This matches common MD5 hash formatting, widely used (but insecure) for password storage and data verification.
 
 ---
 
 ## ⚠️ Question  
 **Q:** What cryptographic weaknesses exist in this hashing method?  
 **A:** If it's `MD5`, `SHA1`, or unsalted hash — they are fast and easily cracked using rainbow tables or brute-force tools. No salting means same hash for same password.
+![alt text](Screenshots/rainbow1.png)  ![alt text](Screenshots/rainbow2.png)
 
 ---
 
-# 🧨 Task 4: Offline Hash Cracking  
+## 🧨 Task 4: Offline Hash Cracking  
 
 ## 🎯 Goal  
 Crack the extracted hashes using offline tools like John or Hashcat.
@@ -145,6 +169,37 @@ Crack the extracted hashes using offline tools like John or Hashcat.
 ```bash
 john --wordlist=/usr/share/wordlists/rockyou.txt hashes.txt
 ```
+
+![alt text](Screenshots/john1.png)
+
+---
+
+### ⚠️ Problem Encountered ⚠️
+
+- When running the code above, you will encounter the error
+    - `Warning: detected hash type "LM", but the string is also recognized as "dynamic=md5($p)"`
+
+This is caused by the hash being **MD5**, and we didn't specify the format we want to use, so it wouldnt know which format to use and would **defaulted** to using **LM** format to crack it
+
+---
+
+### ✅ Solution ✅ 🛠️
+
+This can be solved/fixed by adding the correct/wanted format to the command
+
+- For MD5:
+
+```sh
+john --format=raw-md5 --wordlist=<wordlist> hash.txt
+```
+
+![alt text](Screenshots/john2.png)
+
+By using this command, we can see that the cracking was successful, thus showing us the treasure behind the hash
+
+- Cracked password: `password`
+
+---
 
 ### 🔹 Using `hashcat`:  
 ```bash
