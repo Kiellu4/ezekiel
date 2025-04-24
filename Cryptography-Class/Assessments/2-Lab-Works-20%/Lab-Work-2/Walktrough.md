@@ -1,5 +1,5 @@
 
-# 🔐 Lab 2: Cryptographic Attacks  
+# 🔐 Lab 2: Cryptographic Attacks – Cracking Weak Password Hashes & Exploiting Poor Authentication in Databases 🗝️💻  
 
 ## 📌 Objective  
 - Identify and exploit cryptographic weaknesses in database authentication and password storage.  
@@ -26,10 +26,10 @@ Identify the running database service and gain access from Kali Linux.
 ## 🔹 1.1 Nmap scan 
 - Scan to identify open database service.
 ```bash
-nmap -sS <target-ip>
+nmap -sV <target-ip>
 ```
 
-![alt text](Screenshots/nmap.png)
+![alt text](Screenshots/nmap.png) 
 
 - Connect with target open database (mysql on port:3306 & portgresql on port:5432). 
 ```bash
