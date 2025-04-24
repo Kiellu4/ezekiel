@@ -37,21 +37,22 @@ mysql -h <target-ip> -u root
 ```
 
 ![alt text](Screenshots/mysql1.png) 
-    - `ERROR 2026 (HY000): TLS/SSL error: wrong version number`.
+- Error found: `ERROR 2026 (HY000): TLS/SSL error: wrong version number`.
 
 - Referring from `mysql --help`. 
 ```bash
 mysql --help | grep -i ssl  
 ```
+- Fix the command using: `--skip-ssl` command.
 
-![alt text](Screenshots/mysql2.png)
+![alt text](Screenshots/mysql2.png) 
 
-- Troubleshooting error with the command. 
+- Troubleshooting error with the fix command. 
 ```bash
-mysql -h 192.168.21.133 -u root --skip-ssl  
+mysql -h <target-ip> -u root --skip-ssl  
 ```
 
-![alt text](Screenshots/mysql3.png)
+![alt text](Screenshots/mysql3.png) 
 
 ---
 
