@@ -135,12 +135,14 @@ vim hashes.txt
 ```bash
 hashid hashes.txt
 ```
+![alt text](Screenshots/hashes5.png)
+
 or  
 ```bash
 hash-identifier
 ```
+![alt text](Screenshots/hashes6.png)
 
-![alt text](Screenshots/hashes5.png)
 - Key Findings:
     - 32-character hexadecimal string (digits 0-9 and lowercase letters a-f).
     - No special characters (no *, $, colons, etc.)—just the raw hash value.
