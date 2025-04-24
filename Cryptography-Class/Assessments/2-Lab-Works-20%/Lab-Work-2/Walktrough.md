@@ -137,12 +137,6 @@ hashid hashes.txt
 ```
 ![alt text](Screenshots/hashes5.png)
 
-or  
-```bash
-hash-identifier
-```
-![alt text](Screenshots/hashes6.png)
-
 - Key Findings:
     - 32-character hexadecimal string (digits 0-9 and lowercase letters a-f).
     - No special characters (no *, $, colons, etc.)—just the raw hash value.
@@ -165,18 +159,25 @@ Crack the extracted hashes using offline tools like John or Hashcat.
 
 ---
 
-## 🛠️ Tools & Commands  
+## 🛠️ Tools & Commands 
+- For this hash cracking, you can use the possible password list in directory `/usr/share/wordlists/`. 
 
 ### 🔹 Using `john`:  
 ```bash
-john --wordlist=/usr/share/wordlists/rockyou.txt hashes.txt
+john --wordlist=/usr/share/wordlists/passlist.txt hashes.txt
 ```
 
 ![alt text](Screenshots/john1.png)
 
 ---
 
-### ⚠️ Problem Encountered ⚠️
+### ⚠️ Problem Identified ⚠️
+
+| Problem                     | Cause                                                                 | Solution                                                                 |
+|-----------------------------|-----------------------------------------------------------------------|--------------------------------------------------------------------------|
+| **Incorrect Hash Detection** | John defaults to LM hashing despite MD5 hints (`dynamic=md5($p)`).    | Force MD5 format: `john --format=raw-md5 --wordlist=rockyou.txt hashes.txt` |
+| **Failed Cracking Attempt**  | Wordlist (`rockyou.txt`) may not contain the password.                | Use larger wordlists (e.g., `SecLists`) or brute-force: `john --incremental --format=raw-md5 hashes.txt` |
+| **Inefficient Cracking**     | LM hashing is slow/irrelevant for MD5.                               | Switch to `hashcat` for speed: `hashcat -m 0 hashes.txt rockyou.txt`     |
 
 - When running the code above, you will encounter the error
     - `Warning: detected hash type "LM", but the string is also recognized as "dynamic=md5($p)"`
@@ -187,15 +188,21 @@ This is caused by the hash being **MD5**, and we didn't specify the format we wa
 
 ### ✅ Solution ✅ 🛠️
 
-This can be solved/fixed by adding the correct/wanted format to the command
+This can be fixed by adding the correct format to the command.
 
 - For MD5:
-
-```sh
-john --format=raw-md5 --wordlist=<wordlist> hash.txt
+```bash
+john --format=raw-md5 --wordlist=/usr/share/wordlists/passlist.txt hashes.txt
 ```
 
-![alt text](Screenshots/john2.png)
+![alt text](Screenshots/john2.png)  
+
+- Command view cracked password:
+```bash
+john --show --format=raw-md5 hashes.txt 
+```
+
+![alt text](Screenshots/john3.png) 
 
 By using this command, we can see that the cracking was successful, thus showing us the treasure behind the hash
 
@@ -203,20 +210,11 @@ By using this command, we can see that the cracking was successful, thus showing
 
 ---
 
-### 🔹 Using `hashcat`:  
-```bash
-hashcat -m 0 -a 0 hashes.txt /usr/share/wordlists/rockyou.txt
-```
-
-![image](https://github.com/user-attachments/assets/example-crack.png)
-
----
-
 ## 📊 Cracking Results  
 
 | Username | Hash                         | Plaintext | Strength (Weak/Strong) |
 |----------|------------------------------|-----------|-------------------------|
-| alice    | 5f4dcc3b5aa765d61d8327deb882cf99 | password  | Weak                    |
+| admin    | 5f4dcc3b5aa765d61d8327deb882cf99 | password  | Weak                    |
 
 ---
 
@@ -246,17 +244,17 @@ hashcat -m 0 -a 0 hashes.txt /usr/share/wordlists/rockyou.txt
 ## 📷 Optional Wireshark Check  
 - Captured DB login traffic to confirm encryption.  
 - If using MySQL without SSL, credentials appear in plaintext.  
+![alt text](Screenshots/wireshark.png) 
+---
+
+## 📦 Tools Used  
+
+- `nmap`, `mysql`, `john`, `hashid`, `Wireshark`  
+- Wordlists: custom lists `/usr/share/wordlists/passlist.txt` 
 
 ---
 
-# 📦 Tools Used  
-
-- `nmap`, `mysql`, `sqlite3`, `john`, `hashcat`, `hashid`, `hash-identifier`, `Wireshark`  
-- Wordlists: `rockyou.txt`, custom lists  
-
----
-
-# 📝 Conclusion  
+## 📝 Conclusion  
 
 - Discovered and connected to insecure database services.  
 - Identified users with missing/weak passwords.  
