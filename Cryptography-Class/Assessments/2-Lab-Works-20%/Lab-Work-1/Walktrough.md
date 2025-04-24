@@ -7,7 +7,7 @@ The purpose of this lab is to simulate brute force attacks against common networ
 
 ## 🖥️ Lab Environment Setup
 - **Attacker VM:** Kali Linux 2024.4
-- **Target VM:** Vulnerable Linux VM (Metasploitable2 / custom)
+- **Target VM:** Vulnerable Linux VM (Metasploitable2)
 - **Tools Used:** Hydra, Burp Suite, Wireshark,
 
 ---
