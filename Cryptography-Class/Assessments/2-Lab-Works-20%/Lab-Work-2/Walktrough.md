@@ -12,7 +12,7 @@
 ## 🖥️ Lab Environment Setup  
 - **Attacker VM:** Kali Linux 2024.4  
 - **Target VM:** Vulnerable Linux VM (Metasploitable2)  
-- **Tools Used:** `mysql`, `sqlite3`, `john`, `hashcat`, `hashid`, `hash-identifier`, `Wireshark`  
+- **Tools Used:** `nmap`, `mysql`, `john`, `hashid`, `Wireshark`  
 
 ---
 
@@ -249,7 +249,7 @@ By using this command, we can see that the cracking was successful, thus showing
 
 ## 📦 Tools Used  
 
-- `nmap`, `mysql`, `john`, `hashid`, `Wireshark`  
+- `nmap`, `mysql`, `john`, `hashid`, `Wireshark`.  
 - Wordlists: custom lists `/usr/share/wordlists/passlist.txt` 
 
 ---
