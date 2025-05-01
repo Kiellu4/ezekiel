@@ -16,8 +16,19 @@ Encrypt and decrypt a file using AES with CBC mode and verify content integrity.
 ---
 
 ### 🛠️ Steps
+### ✅ Kiel → Aabas
 1. Create a plaintext file:
 
 ```bash
-echo "Mesej rahsia guna AES encryption oleh <Your Name>" > rahsia.txt
+echo "flag{AES_256_CBC}" > kiel_aes.txt
 ```
+
+
+2. Encrypt using AES-256-CBC:
+
+```bash
+openssl enc -aes-256-cbc -salt -in kiel_aes.txt -out kiel_aes.enc -k abc123
+```
+
+
+3. 
