@@ -17,7 +17,7 @@ Encrypt and decrypt a file using AES with CBC mode and verify content integrity.
 
 ### 🛠️ Steps
 
-### ✅ Ezekiel 
+### 👦🏽 Ezekiel 
 1. Create a plaintext file:
 
 ```bash
@@ -38,7 +38,7 @@ openssl enc -aes-256-cbc -salt -in kiel_aes.txt -out kiel_aes.enc -k abc123
 
 ![alt text](Screenshots/task1_email.png)
 
-### ✅ Aabas 
+### 👦🏾 Aabas 
 4. Decrypt:
 
 ```bash
@@ -65,7 +65,7 @@ Encrypt and decrypt a message using RSA key pairs.
 ---
 
 ### 🛠️ Steps
-### ✅ Ezekiel 
+### 👦🏽 Ezekiel 
 
 1. Generate RSA Private Key:
 
@@ -87,7 +87,7 @@ openssl rsa -in private.pem -pubout -out public.pem
 
 ![alt text](Screenshots/task2_email.png)
 
-### ✅ Aabas
+### 👦🏾 Aabas
 4. Create message:
 ```bash
 echo "flag{p1Nj4m_1oo}" > secret.txt
@@ -105,7 +105,7 @@ openssl rsautl -encrypt -inkey public.pem -pubin -in secret.txt -out aabas.enc
 
 ![alt text](Screenshots/task2_email2.png) 
 
-### ✅ Ezekiel 
+### 👦🏽 Ezekiel 
 
 7. Decrypt with private key:
 ```bash
@@ -121,3 +121,158 @@ cat aabas.txt
 
 ![alt text](Screenshots/task2_verify.png)
 
+---
+
+## 🔹 Task 3: Hashing and Message Integrity using SHA-256
+
+### 🎯 Objective
+Hash a file using SHA-256 and observe behavior after changes.
+
+---
+
+### 🛠️ Steps
+### 👦🏽 Ezekiel 
+
+1. Create a sample file:
+
+```bash
+echo "flag{SHA-256}" > ezekiel.txt
+```
+
+![alt text](Screenshots/task3_plaintext.png) 
+
+2. Generate SHA-256 hash:
+
+```bash
+openssl dgst -sha256 ezekiel.txt
+```
+
+![alt text](Screenshots/task3_dgst.png) 
+
+3. Modify file:
+
+```bash
+echo "You have been hacked!" >> ezekiel.txt
+```
+
+![alt text](Screenshots/task3_alter.png) 
+
+4. Re-check hash:
+
+```bash
+openssl dgst -sha256 ezekiel.txt
+```
+
+![alt text](Screenshots/task3_dgst2.png) 
+
+### 📌 Explanation
+SHA-256 hash changes significantly even with tiny modifications. This is a core property of secure hash functions known as the **avalanche effect**.
+
+---
+
+## 🔹 Task 4: Digital Signatures using RSA & SHA-256
+
+### 🎯 Objective
+Perform secure message exchange and signature verification between Kiel and Aabas.
+
+---
+
+### 🛠️ Steps
+### 👦🏽 Ezekiel 
+
+1. Generate private and public key:
+- If already generate, skip to step 3.
+
+```bash
+openssl genpkey -algorithm RSA -out private.pem -pkeyopt rsa_keygen_bits:2048
+openssl rsa -in private.pem -pubout -out public.pem
+```
+
+![alt text](Screenshots/task2_privatekey.png)
+![alt text](Screenshots/task2_publickey.png) 
+
+2. Send public key,**public.pem** to Aabas. (Example: via Email/WhatsApp)
+
+![alt text](Screenshots/task2_email.png)
+
+3. Create message:
+
+```bash
+echo "flag{Ds_RSa+ShA-256}" > ds_kiel.txt
+```
+
+![alt text](Screenshots/task4_plaintext.png)
+
+4. Sign it:
+
+```bash
+openssl dgst -sha256 -sign private.pem -out sign_kiel.bin ds_kiel.txt
+```
+
+![alt text](Screenshots/task4_sign.png)
+
+5. Send the files,**sign_kiel.bin** and **ds_kiel.txt** to Aabas. (Example: via Email/WhatsApp)
+
+![alt text](Screenshots/task4_email2.png)
+
+### 👦🏾 Aabas
+6. Verify:
+
+```bash
+openssl dgst -sha256 -verify private.pem -signature sign_kiel.bin ds_kiel.txt
+```
+- Output: Verified OK
+
+![alt text](Screenshots/task4_verify.jpg)
+
+---
+
+## 🚫 Tamper Check
+
+### 👦🏾 Aabas
+1. Modify message:
+
+```bash
+echo "_" >> ds_kiel.txt
+```
+
+2. Re-verify:
+
+```bash
+openssl dgst -sha256 -verify private.pem -signature sign_kiel.bin ds_kiel.txt
+```
+
+![alt text](Screenshots/task4_verify2.jpg)
+- Verification failure.
+
+## ✅ Troubleshoot
+
+### 👦🏾 Aabas / 👦🏽 Ezekiel
+1. Modify message:
+
+```bash
+echo "hacked" >> ds_kiel.txt
+cat ds_kiel.txt
+```
+
+![alt text](Screenshots/task4_troubleshoot1.png)
+
+2. Verify:
+
+```bash
+openssl dgst -sha256 -verify private.pem -signature sign_kiel.bin ds_kiel.txt
+```
+
+![alt text](Screenshots/task4_troubleshoot2.png)
+- Verification failure
+
+3. Fix the file and re-verify:
+```bash
+echo "flag{Ds_RSa+ShA-256}" > ds_kiel.txt
+openssl dgst -sha256 -verify private.pem -signature sign_kiel.bin ds_kiel.txt
+```
+
+![alt text](Screenshots/task4_troubleshoot3.png)
+
+### Explaination:
+ask chatgpt
