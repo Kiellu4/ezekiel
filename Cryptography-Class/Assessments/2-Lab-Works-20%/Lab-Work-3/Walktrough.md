@@ -17,12 +17,13 @@ Encrypt and decrypt a file using AES with CBC mode and verify content integrity.
 
 ### 🛠️ Steps
 
-### ✅ Kiel 
+### ✅ Ezekiel 
 1. Create a plaintext file:
 
 ```bash
 echo "flag{AES_256_CBC}" > kiel_aes.txt
 ```
+
 ![alt text](Screenshots/task1_plaintext.jpg) 
 
 2. Encrypt using AES-256-CBC:
@@ -30,9 +31,10 @@ echo "flag{AES_256_CBC}" > kiel_aes.txt
 ```bash
 openssl enc -aes-256-cbc -salt -in kiel_aes.txt -out kiel_aes.enc -k abc123
 ```
+
 ![alt text](Screenshots/task1_aes_enc.jpg) 
 
-3. Send encrypt file,**kiel_aes.enc** and password:**abc123** to Aabas. (Example: via Email/WhatsApp)
+3. Send encryption file,**kiel_aes.enc** and password:**abc123** to Aabas. (Example: via Email/WhatsApp)
 
 ![alt text](Screenshots/task1_email.png)
 
@@ -42,6 +44,7 @@ openssl enc -aes-256-cbc -salt -in kiel_aes.txt -out kiel_aes.enc -k abc123
 ```bash
 openssl enc -aes-256-cbc -d -in kiel_aes.enc -out kiel_aes.txt -k abc123
 ```
+
 ![alt text](Screenshots/task1_aes_decrypted.jpg) 
 
 5. Verify:
@@ -49,6 +52,7 @@ openssl enc -aes-256-cbc -d -in kiel_aes.enc -out kiel_aes.txt -k abc123
 ```bash
 cat kiel_aes.txt
 ```
+
 ![alt text](Screenshots/task1_verify.jpg) 
 
 ---
@@ -61,13 +65,14 @@ Encrypt and decrypt a message using RSA key pairs.
 ---
 
 ### 🛠️ Steps
-### ✅ Kiel → Aabas
+### ✅ Ezekiel 
 
 1. Generate RSA Private Key:
 
 ```bash
 openssl genpkey -algorithm RSA -out private.pem -pkeyopt rsa_keygen_bits:2048
 ```
+
 ![alt text](Screenshots/task2_privatekey.png) 
 
 2. Extract Public Key:
@@ -75,7 +80,44 @@ openssl genpkey -algorithm RSA -out private.pem -pkeyopt rsa_keygen_bits:2048
 ```bash
 openssl rsa -in private.pem -pubout -out public.pem
 ```
+
 ![alt text](Screenshots/task2_publickey.png) 
 
-3. Send public key,**public.pem** to Aabas. 
+3. Send public key,**public.pem** to Aabas. (Example: via Email/WhatsApp)
+
 ![alt text](Screenshots/task2_email.png)
+
+### ✅ Aabas
+4. Create message:
+```bash
+echo "flag{p1Nj4m_1oo}" > secret.txt
+```
+
+5. Encrypt with public key:
+
+```bash
+openssl rsautl -encrypt -inkey public.pem -pubin -in secret.txt -out aabas.enc
+```
+
+![alt text](Screenshots/task2_rsa_enc.jpg) 
+
+6. Send encryption file,**aabas.enc** to Ezekiel. (Example: via Email/WhatsApp)
+
+![alt text](Screenshots/task2_email2.png)
+
+### ✅ Ezekiel 
+
+7. Decrypt with private key:
+```bash
+openssl rsautl -decrypt -inkey private.pem -in aabas.enc -out aabas.txt
+```
+
+![alt text](Screenshots/task2_rsa_dec.png)
+
+8. Verify:
+```bash
+cat aabas.txt
+```
+
+![alt text](Screenshots/task2_verify.png)
+
