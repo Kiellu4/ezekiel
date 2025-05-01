@@ -103,7 +103,7 @@ openssl rsautl -encrypt -inkey public.pem -pubin -in secret.txt -out aabas.enc
 
 6. Send encryption file,**aabas.enc** to Ezekiel. (Example: via Email/WhatsApp)
 
-![alt text](Screenshots/task2_email2.png)
+![alt text](Screenshots/task2_email2.png) 
 
 ### ✅ Ezekiel 
 
