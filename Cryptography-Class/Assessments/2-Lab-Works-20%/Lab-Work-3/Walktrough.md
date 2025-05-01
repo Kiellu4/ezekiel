@@ -17,6 +17,7 @@ Encrypt and decrypt a file using AES with CBC mode and verify content integrity.
 
 ### 🛠️ Steps
 ### ✅ Kiel → Aabas
+
 1. Create a plaintext file:
 
 ```bash
@@ -31,7 +32,8 @@ openssl enc -aes-256-cbc -salt -in kiel_aes.txt -out kiel_aes.enc -k abc123
 ```
 ![alt text](Screenshots/task1_aes_enc.jpg) 
 
-3. Send `kiel_aes.enc` and password: `abc123` to **Aabas**. (Example: via Email/WhatsApp)
+3. Send encrypt file,**kiel_aes.enc** and password:**abc123** to Aabas. (Example: via Email/WhatsApp)
+
 ![alt text](Screenshots/task1_email.png)
 
 4. Decrypt:
@@ -39,14 +41,14 @@ openssl enc -aes-256-cbc -salt -in kiel_aes.txt -out kiel_aes.enc -k abc123
 ```bash
 openssl enc -aes-256-cbc -d -in kiel_aes.enc -out kiel_aes.txt -k abc123
 ```
-![alt text](Screenshots/task1_aes_decrypted.png) 
+![alt text](Screenshots/task1_aes_decrypted.jpg) 
 
 5. Verify:
 
 ```bash
 cat kiel_aes.txt
 ```
-![alt text](Screenshots/task1_verify.png) 
+![alt text](Screenshots/task1_verify.jpg) 
 
 ---
 
@@ -59,6 +61,7 @@ Encrypt and decrypt a message using RSA key pairs.
 
 ### 🛠️ Steps
 ### ✅ Kiel → Aabas
+
 1. Generate RSA Private Key:
 
 ```bash
@@ -73,5 +76,5 @@ openssl rsa -in private.pem -pubout -out public.pem
 ```
 ![alt text](Screenshots/task2_publickey.png) 
 
-3. Send `kiel_aes.enc` and password: `abc123` to **Aabas**. (Example: via Email/WhatsApp)
+3. Send public key,**public.pem** to Aabas. 
 ![alt text](Screenshots/task2_email.png)
