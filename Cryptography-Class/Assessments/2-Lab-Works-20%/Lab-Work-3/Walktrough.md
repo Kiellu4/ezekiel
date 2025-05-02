@@ -32,7 +32,7 @@ echo "flag{AES_256_CBC}" > kiel_aes.txt
 openssl enc -aes-256-cbc -salt -in kiel_aes.txt -out kiel_aes.enc -k abc123
 ```
 
-![alt text](Screenshots/task1_aes_enc.jpg) 
+![alt text](Screenshots/l.jpg)
 
 3. Send encryption file,**kiel_aes.enc** and password:**abc123** to Aabas. (Example: via Email/WhatsApp)
 
@@ -289,7 +289,7 @@ openssl dgst -sha256 -verify private.pem -signature sign_kiel.bin ds_kiel.txt
 
 ---
 
-### 🎓 Summary to Present:
+### 🎓 Summary:
 - Task 1 (AES): Used a shared password to securely send a file.
 
 - Task 2 (RSA): Used public/private keys to send secrets safely.
