@@ -85,7 +85,7 @@ openssl rsa -in private.pem -pubout -out public.pem
 
 3. Send public key,**public.pem** to Aabas. (Example: via Email/WhatsApp)
 
-![alt text](Screenshots/task2_email.png)
+![alt text](Screenshots/task2_c.png)
 
 ### 👦🏾 Aabas
 4. Create message:
@@ -119,7 +119,7 @@ openssl rsautl -decrypt -inkey private.pem -in aabas.enc -out aabas.txt
 cat aabas.txt
 ```
 
-![alt text](Screenshots/task2_verify.png)
+![alt text](Screenshots/task2_v.png)
 
 ---
 
@@ -196,12 +196,12 @@ openssl genpkey -algorithm RSA -out private.pem -pkeyopt rsa_keygen_bits:2048
 openssl rsa -in private.pem -pubout -out public.pem
 ```
 
-![alt text](Screenshots/task2_privatekey.png)
+![alt text](Screenshots/task2_a.png)
 ![alt text](Screenshots/task2_publickey.png) 
 
 2. Send public key,**public.pem** to Aabas. (Example: via Email/WhatsApp)
 
-![alt text](Screenshots/task2_email.png)
+![alt text](Screenshots/task2_c.png)
 
 3. Create message:
 
