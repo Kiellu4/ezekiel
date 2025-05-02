@@ -119,7 +119,7 @@ openssl rsautl -decrypt -inkey private.pem -in aabas.enc -out aabas.txt
 cat aabas.txt
 ```
 
-![alt text](Screenshots/task2_v.png)
+    ![alt text](Screenshots/task2_v.png)
 
 ---
 
