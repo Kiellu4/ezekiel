@@ -73,7 +73,7 @@ Encrypt and decrypt a message using RSA key pairs.
 openssl genpkey -algorithm RSA -out private.pem -pkeyopt rsa_keygen_bits:2048
 ```
 
-![alt text](Screenshots/task2_a.png) 
+![alt text](Screenshots/task2_privatekey.png) 
 
 2. Extract Public Key:
 
@@ -85,7 +85,7 @@ openssl rsa -in private.pem -pubout -out public.pem
 
 3. Send public key,**public.pem** to Aabas. (Example: via Email/WhatsApp)
 
-![alt text](Screenshots/task2_c.png)
+![alt text](Screenshots/task2_email.png)
 
 ### 👦🏾 Aabas
 4. Create message:
@@ -147,7 +147,7 @@ echo "flag{SHA-256}" > ezekiel.txt
 openssl dgst -sha256 ezekiel.txt
 ```
 
-![alt text](Screenshots/task3_dgst.png) 
+![alt text](Screenshots/task3_dgst.png)  
 
 3. Modify file:
 
@@ -196,12 +196,12 @@ openssl genpkey -algorithm RSA -out private.pem -pkeyopt rsa_keygen_bits:2048
 openssl rsa -in private.pem -pubout -out public.pem
 ```
 
-![alt text](Screenshots/task2_a.png)
+![alt text](Screenshots/task2_privatekey.png)
 ![alt text](Screenshots/task2_publickey.png) 
 
 2. Send public key,**public.pem** to Aabas. (Example: via Email/WhatsApp)
 
-![alt text](Screenshots/task2_c.png)
+![alt text](Screenshots/task2_email.png)
 
 3. Create message:
 
