@@ -73,7 +73,7 @@ Encrypt and decrypt a message using RSA key pairs.
 openssl genpkey -algorithm RSA -out private.pem -pkeyopt rsa_keygen_bits:2048
 ```
 
-![alt text](Screenshots/task2_privatekey.png) 
+![alt text](Screenshots/task2_a.png) 
 
 2. Extract Public Key:
 
