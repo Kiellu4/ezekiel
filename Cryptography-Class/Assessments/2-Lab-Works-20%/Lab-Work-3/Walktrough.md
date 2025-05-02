@@ -165,8 +165,12 @@ openssl dgst -sha256 ezekiel.txt
 
 ![alt text](Screenshots/task3_dgst2.png) 
 
+5. Comparison between this two hashing:
+    - 8f109a1192bd9e05df2ffe1e6343ace951a78e2e36a8dc07d36d3917da7757c1
+    - fb01334e6c7e5751edf68562b4f0b9e3c696b1275ad4dcb3a579c3e78520949b
+
 ### 📌 Explanation
-SHA-256 hash changes significantly even with tiny modifications. This is a core property of secure hash functions known as the **avalanche effect**.
+SHA-256 hash changes significantly even with tiny modifications. This is a core property of secure hash functions known as the **avalanche effect**– even a small change gives a totally different hash. This is how you know if a file is tampered with.
 
 ---
 
@@ -174,6 +178,10 @@ SHA-256 hash changes significantly even with tiny modifications. This is a core 
 
 ### 🎯 Objective
 Perform secure message exchange and signature verification between Kiel and Aabas.
+
+- Digital signatures ensure that:
+    - The message is from the right person (authenticity).
+    - The message has not been changed (integrity).
 
 ---
 
@@ -274,5 +282,18 @@ openssl dgst -sha256 -verify private.pem -signature sign_kiel.bin ds_kiel.txt
 
 ![alt text](Screenshots/task4_troubleshoot3.png)
 
-### Explaination:
-ask chatgpt
+### 📌 Explanation:
+- If someone modifies the message (adds “hacked”), verification fails.
+
+- Once the original message is restored, the signature works again.
+
+---
+
+### 🎓 Summary to Present:
+- Task 1 (AES): Used a shared password to securely send a file.
+
+- Task 2 (RSA): Used public/private keys to send secrets safely.
+
+- Task 3 (SHA-256): Showed that even a small change in a file causes a big change in its hash.
+
+- Task 4 (Digital Signature): Proved message integrity and sender identity using RSA + SHA-256.
