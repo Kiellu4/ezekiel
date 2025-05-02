@@ -32,7 +32,7 @@ echo "flag{AES_256_CBC}" > kiel_aes.txt
 openssl enc -aes-256-cbc -salt -in kiel_aes.txt -out kiel_aes.enc -k abc123
 ```
 
-![alt text](Screenshots/l.jpg)
+![alt text](Screenshots/task1_l.jpg)
 
 3. Send encryption file,**kiel_aes.enc** and password:**abc123** to Aabas. (Example: via Email/WhatsApp)
 
