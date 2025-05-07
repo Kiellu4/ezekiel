@@ -1,7 +1,7 @@
 # 🔒🐍 Lab 4: Implementing Cryptography with Python 
 
-**Author:** Ezekiel Mukhriz
-**Partner:** Muhammad Aabas
+- **Author:** Ezekiel Mukhriz
+- **Partner:** Muhammad Aabas
 
 ### 📌 Objective
 - Learn core cryptographic operations using Python.
