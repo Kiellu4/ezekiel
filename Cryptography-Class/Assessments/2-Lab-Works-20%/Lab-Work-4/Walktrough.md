@@ -64,19 +64,25 @@ pip install cryptography pycryptodome
 
 ## 🔹 Task 2: Asymmetric Encryption using RSA (Kiel ↔ Aabas)
 
-- Here is my [RSA_keypair](Python_Source/RSA_key_pair.py) code.
-- Here is my [RSA_encrypt](Python_Source/RSA_encrypt.py) code.
-- Here is my [RSA_decrypt](Python_Source/RSA_decrypt.py) code.
+- Here is the [RSA_key_pair](Python_Source/RSA_key_pair.py) code.
+- Here is the [RSA_encrypt](Python_Source/RSA_encrypt.py) code.
+- Here is the [RSA_decrypt](Python_Source/RSA_decrypt.py) code.
 
 ---
 
 ### 🛠️ Steps
 
+### 👦🏾 Aabas 
+
+1. Make generate pair key code python:
+
+![aes_run](Screenshots/task2_code1.png) 
+
 ### 👦🏽 Ezekiel 
 
 1. Make encryption code python:
 
-![aes_run](Screenshots/task2_code1.png) 
+![aes_run](Screenshots/task2_code2.png) 
 
 2. Fill the **plaintext** & **password**:
 
@@ -90,13 +96,13 @@ pip install cryptography pycryptodome
 
 1. Make decryption code python:
 
-![aes_run](Screenshots/task2_code2.png) 
+![aes_run](Screenshots/task2_code3.png) 
 
 ---
 
 ## 🔹 Task 3: Hashing and Message Integrity using SHA-256
 
-- Here is my [RSA_python](Python_Source/) code.
+- Here is the [Hashing_SHA-256_python](Python_Source/Hashing_SHA-256.py) code.
 
 ---
 
@@ -104,21 +110,21 @@ pip install cryptography pycryptodome
 
 1. Make encryption code python:
 
-![aes_run](Screenshots/task3_encrypt.png) 
+![aes_run](Screenshots/task3_code.png) 
 
 2. Fill the **plaintext** & **password**:
 
-![aes_run](Screenshots/task3_encrypt.png)
+![aes_run](Screenshots/task3_hash1.png)
 
 3. Send the **Encrypted (Base64)** to Aabas (Example: via Email/WhatsApp):
 
-![aes_run](Screenshots/task3_encrypt.png)
+![aes_run](Screenshots/task3_hash2.png)
 
 ---
 
 ## 🔹 Task 4: Task 4: Digital Signatures using RSA & SHA-256 (Kiel ↔ Aabas)
 
-- Here is my [RSA_python](RSA_encrypt.py) code.
+- Here is the [Digital_Signatures_python](Digital_Signatures.py) code.
 
 ---
 

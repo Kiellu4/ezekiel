@@ -1,5 +1,8 @@
 # Lab 3: Hands-on Exploration of Cryptographic Tools: Hashing, Encryption, and Digital Signatures ✍️🔒
 
+**Author:** Ezekiel Mukhriz
+**Partner:** Muhammad Aabas
+
 ### 📌 Objective
 - Learn core cryptographic operations using OpenSSL.
 - Practice symmetric (AES) and asymmetric (RSA) encryption.
@@ -174,7 +177,7 @@ SHA-256 hash changes significantly even with tiny modifications. This is a core 
 
 ---
 
-## 🔹 Task 4: Digital Signatures using RSA & SHA-256
+## 🔹 Task 4: Digital Signatures using RSA & SHA-256 (Kiel ↔ Aabas)
 
 ### 🎯 Objective
 Perform secure message exchange and signature verification between Kiel and Aabas.
