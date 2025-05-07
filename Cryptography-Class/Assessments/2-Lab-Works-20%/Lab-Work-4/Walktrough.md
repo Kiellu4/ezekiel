@@ -64,9 +64,9 @@ pip install cryptography pycryptodome
 
 ## 🔹 Task 2: Asymmetric Encryption using RSA (Kiel ↔ Aabas)
 
-- Here is my [RSA_python](Python_Source/RSA_key_pair.py) code.
-- Here is my [RSA_python](Python_Source/RSA_encrypt.py) code.
-- Here is my [RSA_python](Python_Source/RSA_decrypt.py) code.
+- Here is my [RSA_keypair](Python_Source/RSA_key_pair.py) code.
+- Here is my [RSA_encrypt](Python_Source/RSA_encrypt.py) code.
+- Here is my [RSA_decrypt](Python_Source/RSA_decrypt.py) code.
 
 ---
 
@@ -76,7 +76,7 @@ pip install cryptography pycryptodome
 
 1. Make encryption code python:
 
-![aes_run](Screenshots/task2_encrypt.png) 
+![aes_run](Screenshots/task2_code1.png) 
 
 2. Fill the **plaintext** & **password**:
 
@@ -84,11 +84,13 @@ pip install cryptography pycryptodome
 
 3. Send the **Encrypted (Base64)** to Aabas (Example: via Email/WhatsApp):
 
-![aes_run](Screenshots/task2_encrypt.png)
+![aes_run](Screenshots/task2_.png)
 
 ### 👦🏾 Aabas 
 
+1. Make decryption code python:
 
+![aes_run](Screenshots/task2_code2.png) 
 
 ---
 
@@ -99,8 +101,6 @@ pip install cryptography pycryptodome
 ---
 
 ### 🛠️ Steps
-
-### 👦🏽 Ezekiel 
 
 1. Make encryption code python:
 
@@ -113,10 +113,6 @@ pip install cryptography pycryptodome
 3. Send the **Encrypted (Base64)** to Aabas (Example: via Email/WhatsApp):
 
 ![aes_run](Screenshots/task3_encrypt.png)
-
-### 👦🏾 Aabas 
-
-
 
 ---
 
