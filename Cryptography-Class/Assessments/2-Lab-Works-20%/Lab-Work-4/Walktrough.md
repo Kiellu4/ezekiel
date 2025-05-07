@@ -1,7 +1,7 @@
 # 🔒🐍 Lab 4: Implementing Cryptography with Python 
 
-- **Author:** Ezekiel Mukhriz
-- **Partner:** Muhammad Aabas
+- **Author:** 👦🏽 Ezekiel Mukhriz
+- **Partner:** 👦🏾 Muhammad Aabas 
 
 ### 📌 Objective
 - Learn core cryptographic operations using Python.
@@ -34,7 +34,7 @@ pip install cryptography pycryptodome
 ### 👦🏽 Ezekiel 
 
 1. Make encryption code python:
-![aes_run](Screenshots/task1_encrypt.png) 
+![aes_run](Screenshots/task1_code.png) 
 
 2. Fill the **plaintext** & **password**:
 ![aes_run](Screenshots/task1_encrypt.png)
@@ -57,7 +57,7 @@ pip install cryptography pycryptodome
 
 ## 🔹 Task 2: Asymmetric Encryption using RSA (Kiel ↔ Aabas)
 
-- Here is my [AES_python](AES_encrypt.py) code.
+- Here is my [RSA_python](RSA_encrypt.py) code.
 
 ---
 
