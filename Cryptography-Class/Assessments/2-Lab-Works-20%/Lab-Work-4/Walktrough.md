@@ -25,7 +25,8 @@ pip install cryptography pycryptodome
 
 ## 🔹 Task 1: Symmetric Encryption using AES-256-CBC (Kiel ↔ Aabas)
 
-- Here is my [AES_python](AES_encrypt.py) code.
+- Here is the [AES_encrypt](AES_encrypt.py) python code.
+- Here is the [AES_decrypt](AES_decrypt.py) python code.
 
 ---
 
@@ -45,13 +46,13 @@ pip install cryptography pycryptodome
 ### 👦🏾 Aabas 
 
 1. Make decryption code python:
-![aes_run](Screenshots/task1_encrypt.png) 
+![aes_run](Screenshots/task1_.png) 
 
 2. Fill the **decryption** & **password**:
-![aes_run](Screenshots/task1_encrypt.png)
+![aes_run](Screenshots/task1_.png)
 
 3. Send the **Encrypted (Base64)** to Aabas (Example: via Email/WhatsApp):
-![aes_run](Screenshots/task1_encrypt.png)
+![aes_run](Screenshots/task1_.png)
 
 ---
 
@@ -66,12 +67,67 @@ pip install cryptography pycryptodome
 ### 👦🏽 Ezekiel 
 
 1. Make encryption code python:
-![aes_run](Screenshots/task1_encrypt.png) 
+![aes_run](Screenshots/task2_encrypt.png) 
 
 2. Fill the **plaintext** & **password**:
-![aes_run](Screenshots/task1_encrypt.png)
+![aes_run](Screenshots/task2_encrypt.png)
 
 3. Send the **Encrypted (Base64)** to Aabas (Example: via Email/WhatsApp):
-![aes_run](Screenshots/task1_encrypt.png)
+![aes_run](Screenshots/task2_encrypt.png)
 
 ### 👦🏾 Aabas 
+
+
+
+---
+
+## 🔹 Task 3: Hashing and Message Integrity using SHA-256
+
+- Here is my [RSA_python](RSA_encrypt.py) code.
+
+---
+
+### 🛠️ Steps
+
+### 👦🏽 Ezekiel 
+
+1. Make encryption code python:
+![aes_run](Screenshots/task3_encrypt.png) 
+
+2. Fill the **plaintext** & **password**:
+![aes_run](Screenshots/task3_encrypt.png)
+
+3. Send the **Encrypted (Base64)** to Aabas (Example: via Email/WhatsApp):
+![aes_run](Screenshots/task3_encrypt.png)
+
+### 👦🏾 Aabas 
+
+
+
+---
+
+## 🔹 Task 3: Hashing and Message Integrity using SHA-256
+
+- Here is my [RSA_python](RSA_encrypt.py) code.
+
+---
+
+### 🛠️ Steps
+
+### 👦🏽 Ezekiel 
+
+1. Make encryption code python:
+![aes_run](Screenshots/task4_encrypt.png) 
+
+2. Fill the **plaintext** & **password**:
+![aes_run](Screenshots/task4_encrypt.png)
+
+3. Send the **Encrypted (Base64)** to Aabas (Example: via Email/WhatsApp):
+![aes_run](Screenshots/task4_encrypt.png)
+
+### 👦🏾 Aabas 
+
+
+
+---
+
