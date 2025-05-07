@@ -134,11 +134,11 @@ pip install cryptography pycryptodome
 
 1. Make encryption code python:
 
-![aes_run](Screenshots/task4_encrypt.png) 
+![aes_run](Screenshots/task4_ds_valid.png) 
 
 2. Fill the **plaintext** & **password**:
 
-![aes_run](Screenshots/task4_encrypt.png)
+![aes_run](Screenshots/task4_ds_invalid.png)  
 
 3. Send the **Encrypted (Base64)** to Aabas (Example: via Email/WhatsApp):
 
