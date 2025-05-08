@@ -140,7 +140,9 @@ pip install cryptography pycryptodome
 
 ## 🔹 Task 4: Task 4: Digital Signatures using RSA & SHA-256 (Kiel ↔ Aabas)
 
-- Here is the [Digital_Signatures.py](Python_Source/Digital_Signatures.py) code.
+- Here is the [RSA_key_pair.py](Python_Source/RSA_key_pair.py) code.
+- Here is the [Digital_Signature_signing.py](Python_Source/Digital_Signature_signing.py) cod
+- Here is the [Digital_Signatures_verification.py](Python_Source/Digital_Signatures_verification.py) code.
 
 ---
 
@@ -148,7 +150,7 @@ pip install cryptography pycryptodome
 
 ### 👦🏾 Aabas (Signing)
 
-1. Run `Digital_Signatures.py`:
+1. Run `Digital_Signatures_signing.py`:
 
 ![task4](Screenshots/task4_code1.png) 
 
@@ -156,26 +158,26 @@ pip install cryptography pycryptodome
 
 ![task4](Screenshots/task4_ds1.png)  
 
-3. Share the **digital signature** and the **plaintext** with Kiel.
+3. Share the **digital signature (Base64)** and the **plaintext** with Kiel.
 
 ![task4](Screenshots/task4_ds2.png) 
 
 ### 👦🏾 Ezekiel (Verification)
 
-1. Run `Digital_Signatures.py`:
+1. Run `Digital_Signatures_verification.py`:
 
 ![task4](Screenshots/task4_code2.png) 
 
-2. Enter `Aabas’s original message, digital signature (Base64)` and `public key` to verify the signature:
+2. Enter Aabas’s **original message, digital signature (Base64)** and **public key** to verify the signature:
 
-![task4](Screenshots/task4_ds3.png)
+![task4](Screenshots/task4_ds3.png) 
 
 3. Confirm if the message is authentic and untampered:
-- The message is valid. ✅
+- The message is **valid.** ✅
 
 ![task4](Screenshots/task4_valid.png)
 
-- The message is invalid. ❌
+- The message is **.** ❌
 
 ![task4](Screenshots/task4_invalid.png)
 
