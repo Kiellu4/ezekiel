@@ -114,29 +114,33 @@ pip install cryptography pycryptodome
 
 ## 🔹 Task 3: Hashing and Message Integrity using SHA-256
 
-- Here is the [Hashing_SHA-256_python](Python_Source/Hashing_SHA-256.py) code.
+- Here is the [Hashing_SHA-256.py](Python_Source/Hashing_SHA-256.py) code.
 
 ---
 
 ### 🛠️ Steps
 
-1. Make encryption code python:
+1. Run `Hashing_SHA-256.py`:
 
-![aes_run](Screenshots/task3_code.png) 
+![task3](Screenshots/task3_code.png) 
 
-2. Fill the **plaintext** & **password**:
+2. Enter your **plaintext message**:
 
-![aes_run](Screenshots/task3_hash1.png)
+![task3](Screenshots/task3_hash1.png)
 
-3. Send the **Encrypted (Base64)** to Aabas (Example: via Email/WhatsApp):
+3. Edit :
 
-![aes_run](Screenshots/task3_hash2.png)
+![task3](Screenshots/task3_hash2.png)
+
+4. 
+
+
 
 ---
 
 ## 🔹 Task 4: Task 4: Digital Signatures using RSA & SHA-256 (Kiel ↔ Aabas)
 
-- Here is the [Digital_Signatures_python](Python_Source/Digital_Signatures.py) code.
+- Here is the [Digital_Signatures.py](Python_Source/Digital_Signatures.py) code.
 
 ---
 
