@@ -413,9 +413,12 @@ Example change: Add `- Hacked`
 
 ### 🧠 Conclusion
 This lab provided hands-on experience with:
-- 🔐 AES symmetric encryption
-- 🔑 RSA asymmetric encryption
-- 🧬 Hashing with SHA-256
-- ✍️ Digital signature generation and verification
+
+| Task | Concept | Importance |
+|------|---------|------------|
+| 1 | AES Symmetric Encryption | Fast & secure, but requires shared password |
+| 2 | RSA Asymmetric Encryption | Secure key exchange without sharing passwords |
+| 3 | SHA-256 Hashing | Integrity checking — any change is detected |
+| 4 | Digital Signature | Validates both integrity & authenticity |
 
 Each task reinforces the importance of confidentiality, integrity, and authenticity in secure communication.
