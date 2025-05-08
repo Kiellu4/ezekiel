@@ -411,7 +411,7 @@ Example change: Add `- Hacked`
 - ✔️ Used in software signing, banking transactions, blockchains, and contracts.
 ---
 
-### 🧠 Conclusion
+## 🧠 Conclusion
 This lab provided hands-on experience with:
 
 | Task | Concept | Importance |
