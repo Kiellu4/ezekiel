@@ -12,7 +12,7 @@
 ---
 
 ### 🐍 Python Installation
-Before you begin:
+Make sure you have:
 1. Install Python (3.8+ recommended).
 2. Install necessary libraries:
 ```bash
@@ -34,31 +34,33 @@ pip install cryptography pycryptodome
 
 ### 👦🏽 Ezekiel 
 
-1. Make encryption code python:
+1. Run `AES_encrypt.py`:
 
-![aes_run](Screenshots/task1_code.png) 
+![task1](Screenshots/task1_code1.png) 
 
-2. Fill the **plaintext** & **password**:
+2. Enter the **plaintext** and a strong **password**:
 
-![aes_run](Screenshots/task1_encrypt.png)
+![task1](Screenshots/task1_encrypt1.png) 
 
-3. Send the **Encrypted (Base64)** to Aabas (Example: via Email/WhatsApp):
+3. Copy the **Base64 Encrypted Output**:
 
-![aes_run](Screenshots/task1_encrypt.png)
+![task1](Screenshots/task1_encrypt2.png) 
+
+4. Send the **Encrypted (Base64)** to Aabas (Example: via Email/WhatsApp):
 
 ### 👦🏾 Aabas 
 
-1. Make decryption code python:
+1. Run `AES_decrypt.py`:
 
-![aes_run](Screenshots/task1_.png) 
+![task1](Screenshots/task1_code2.png) 
 
-2. Fill the **decryption** & **password**:
+2. Paste the **Base64 Encrypted Message** and enter the same **password**:
 
-![aes_run](Screenshots/task1_.png)
+![task1](Screenshots/task1_decrypt1.png)
 
-3. Send the **Encrypted (Base64)** to Aabas (Example: via Email/WhatsApp):
+3. View the decrypted message:
 
-![aes_run](Screenshots/task1_.png)
+![task1](Screenshots/task1_decrypt2.png) 
 
 ---
 
