@@ -120,28 +120,67 @@ pip install cryptography pycryptodome
 
 ### 🛠️ Steps
 
-1. Run `Hashing_SHA-256.py`:
-
+1. Run the script:
+Run the Python script `Hashing_SHA-256.py` to start the hashing program.
 ![task3](Screenshots/task3_code.png) 
 
-2. Enter your **plaintext message**:
+2. Enter your message:
+Type your **original plaintext message**.
+Example used:
+```bash
+Cryptography Lab by Ezekiel, DNWS23010066 !
+```
 
-![task3](Screenshots/task3_hash1.png)
+📷 Screenshot:
 
-3. Edit :
+![task3](Screenshots/task3_hash1.png) 
 
-![task3](Screenshots/task3_hash2.png)
+🔑 SHA-256 Output:
+```output
+3343fe8541a33a630a151b45f5375008d1e020759847b630711d0fdd6c9f3e30
+```
 
-4. 
+3. Modify the Message Slightly:
+Now change a single character in the original input.
+Example change: Replace `0066` ➜ `0046`
+```bash
+Cryptography Lab by Ezekiel, DNWS23010046 !
+```
 
+📷 Screenshot:
 
+![task3](Screenshots/task3_hash2.png) 
+
+🔑 SHA-256 Output:
+```output
+d7ec10033d0d9e160e00fe31bc1fad1ce7c77d8c5101ad6b960f622849b12a0b
+```
+
+4. Compare the output:
+- 1st hash: `Cryptography Lab by Ezekiel, DNWS23010066 !`
+```output
+3343fe8541a33a630a151b45f5375008d1e020759847b630711d0fdd6c9f3e30
+```
+
+- 2nd hash: `Cryptography Lab by Ezekiel, DNWS23010046 !`
+```output
+d7ec10033d0d9e160e00fe31bc1fad1ce7c77d8c5101ad6b960f622849b12a0b
+```
+
+### 🌪️ Avalanche Effect Explained
+
+#### 🔍 What just happened?
+Although only two digits were changed (66 ➜ 46), the entire SHA-256 hash changed drastically. This is known as the Avalanche Effect — a key property of cryptographic hash functions.
+
+### ✅ Why It Matters
+✔️ Ensures file/data integrity with even tiny changes detected.
 
 ---
 
 ## 🔹 Task 4: Task 4: Digital Signatures using RSA & SHA-256 (Kiel ↔ Aabas)
 
 - Here is the [RSA_key_pair.py](Python_Source/RSA_key_pair.py) code.
-- Here is the [Digital_Signature_signing.py](Python_Source/Digital_Signature_signing.py) cod
+- Here is the [Digital_Signature_signing.py](Python_Source/Digital_Signature_signing.py) code.
 - Here is the [Digital_Signatures_verification.py](Python_Source/Digital_Signatures_verification.py) code.
 
 ---
