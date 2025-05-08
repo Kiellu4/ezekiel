@@ -1,6 +1,6 @@
-from Crypto.PublicKey import RSA
-from Crypto.Cipher import PKCS1_OAEP
-import base64
+from Crypto.PublicKey import RSA    #RSA: To handle RSA key import.
+from Crypto.Cipher import PKCS1_OAEP    #PKCS1_OAEP: A padding scheme used for secure RSA encryption.
+import base64   #base64: For decoding the public key and encoding the ciphertext.
 
 def encrypt_with_public_key(public_key_b64, plaintext):
     # Decode the Base64-encoded public key
