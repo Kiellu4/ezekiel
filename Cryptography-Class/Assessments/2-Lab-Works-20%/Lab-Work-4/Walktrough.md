@@ -116,8 +116,8 @@ Cryptography Lab by Aabas & Ezekiel, DNWS23010046 & DNWS23010066
 ![task1](Screenshots/task1_decrypt2.png) 
 
 ### 🧠 Why It Matters
-✔️ Used for secure file storage, database encryption, or private messaging.
-✔️ Fast and efficient but requires secure key sharing since the same password must be known by both sender and receiver.
+- ✔️ Used for secure file storage, database encryption, or private messaging.
+- ✔️ Fast and efficient but requires secure key sharing since the same password must be known by both sender and receiver.
 
 ### ℹ️ Info
 The difference in the encrypted Base64 outputs, despite using the same plaintext and password, is likely due to the use of a random initialization vector (IV) in the AES encryption process.
@@ -231,8 +231,8 @@ Cryptography Lab by Aabas & Ezekiel, DNWS23010046 & DNWS23010066
 ![task2](Screenshots/task2_decrypt2.png) 
 
 ### 🧠 Why It Matters
-✔️ Enables secure communication without pre-shared keys.
-✔️ Used in SSL/TLS, email encryption, and digital certificates.
+- ✔️ Enables secure communication without pre-shared keys.
+- ✔️ Used in SSL/TLS, email encryption, and digital certificates.
 
 ### ℹ️ Info
 Reusing old Base64 ciphertext in RSA encryption is not secure due to the deterministic nature of RSA without padding, which can lead to vulnerabilities.
@@ -307,8 +307,8 @@ d7ec10033d0d9e160e00fe31bc1fad1ce7c77d8c5101ad6b960f622849b12a0b
 Although only two digits were changed (66 ➜ 46), the entire SHA-256 hash changed drastically. This is known as the Avalanche Effect — a key property of cryptographic hash functions.
 
 ### 🧠 Why It Matters
-✔️ Ensures file/data integrity with even tiny changes detected.
-✔️ Critical for password security, blockchain integrity, and digital signatures.
+- ✔️ Ensures file/data integrity with even tiny changes detected.
+- ✔️ Critical for password security, blockchain integrity, and digital signatures.
 ---
 
 ## 🔹 Task 4: Task 4: Digital Signatures using RSA & SHA-256 (Kiel ↔ Aabas)
@@ -406,9 +406,9 @@ Example change: Add `- Hacked`
 ![task4](Screenshots/task4_invalid.png)
 
 ### 🧠 Why It Matters
-✔️ Ensures authenticity (from the claimed sender).
-✔️ Ensures integrity (message has not changed).
-✔️ Used in software signing, banking transactions, blockchains, and contracts.
+- ✔️ Ensures authenticity (from the claimed sender).
+- ✔️ Ensures integrity (message has not changed).
+- ✔️ Used in software signing, banking transactions, blockchains, and contracts.
 ---
 
 ### 🧠 Conclusion
