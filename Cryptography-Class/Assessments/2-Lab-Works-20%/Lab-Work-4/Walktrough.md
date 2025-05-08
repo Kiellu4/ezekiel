@@ -135,8 +135,8 @@ The difference in the encrypted Base64 outputs, despite using the same plaintext
 
 ### 🔑 What is it?
 **RSA** is an asymmetric encryption algorithm. It uses a **key pair**:
-- A **public key** to encrypt
-- A **private key** to decrypt
+- A **public key** to encrypt.
+- A **private key** to decrypt.
 ❗ Remember: Only the person with the private key can decrypt what’s been encrypted using the public key.
 
 ---
@@ -406,9 +406,9 @@ Example change: Add `- Hacked`
 ![task4](Screenshots/task4_invalid.png)
 
 ### 🧠 Why It Matters
-✔️ Ensures authenticity (from the claimed sender)
-✔️ Ensures integrity (message has not changed)
-✔️ Used in software signing, banking transactions, blockchains, and contracts
+✔️ Ensures authenticity (from the claimed sender).
+✔️ Ensures integrity (message has not changed).
+✔️ Used in software signing, banking transactions, blockchains, and contracts.
 ---
 
 ### 🧠 Conclusion
