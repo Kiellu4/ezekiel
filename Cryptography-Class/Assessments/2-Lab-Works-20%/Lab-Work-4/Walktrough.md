@@ -1,6 +1,6 @@
 # 🔒🐍 Lab 4: Implementing Cryptography with Python 
 
-- **Author:** 👦🏽 Ezekiel Mukhriz
+- **Author:** 👦🏾 Ezekiel Mukhriz
 - **Partner:** 👦🏾 Muhammad Aabas 
 
 ### 📌 Objective
@@ -32,7 +32,7 @@ pip install cryptography pycryptodome
 
 ### 🛠️ Steps:
 
-### 👦🏽 Ezekiel 
+### 👦🏾 Ezekiel 
 
 1. Run `AES_encrypt.py`:
 
@@ -82,7 +82,7 @@ pip install cryptography pycryptodome
 
 2. Share the **public key** with Ezekiel.
 
-### 👦🏽 Ezekiel 
+### 👦🏾 Ezekiel 
 
 1. Run `RSA_encrypt.py`:
 
@@ -146,23 +146,38 @@ pip install cryptography pycryptodome
 
 ### 🛠️ Steps
 
-### 👦🏽 Ezekiel 
+### 👦🏾 Aabas (Signing)
 
-1. Make encryption code python:
+1. Run `Digital_Signatures.py`:
 
-![aes_run](Screenshots/task4_ds_valid.png) 
+![task4](Screenshots/task4_code1.png) 
 
-2. Fill the **plaintext** & **password**:
+2. Input the **plaintext** and your **private key**:
 
-![aes_run](Screenshots/task4_ds_invalid.png)  
+![task4](Screenshots/task4_ds1.png)  
 
-3. Send the **Encrypted (Base64)** to Aabas (Example: via Email/WhatsApp):
+3. Share the **digital signature** and the **plaintext** with Kiel.
 
-![aes_run](Screenshots/task4_encrypt.png)
+![task4](Screenshots/task4_ds2.png) 
 
-### 👦🏾 Aabas 
+### 👦🏾 Ezekiel (Verification)
 
+1. Run `Digital_Signatures.py`:
 
+![task4](Screenshots/task4_code2.png) 
+
+2. Enter `Aabas’s original message, digital signature (Base64)` and `public key` to verify the signature:
+
+![task4](Screenshots/task4_ds3.png)
+
+3. Confirm if the message is authentic and untampered:
+- The message is valid. ✅
+
+![task4](Screenshots/task4_valid.png)
+
+- The message is invalid. ❌
+
+![task4](Screenshots/task4_invalid.png)
 
 ---
 
