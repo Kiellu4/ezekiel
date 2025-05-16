@@ -118,7 +118,56 @@ gpg --verify signed_message.txt.asc
 
 ![alt text](<Screenshots/task3_verify.png>) 
 
+---
 
+## ✅ Task 4: Configure Passwordless SSH Authentication
 
+**Objective:** Set up SSH key-based login to localhost or a test VM.
 
+### 🔧 Steps:
 
+1. Generate SSH key pair:
+```bash
+ssh-keygen -C "Ezekiel Mukhriz-NWS23010066"
+```
+
+📷 Screenshot:
+
+![alt text](<Screenshots/task4_genkeypair.png>)  
+
+2. Add public key to authorized_keys:
+```bash
+cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+chmod 600 ~/.ssh/authorized_keys
+```
+📷 Screenshot:
+
+![alt text](<Screenshots/task4_genkeypair.png>)  
+
+3. Test login:
+- Go to openshell in windows and insert `username@ip address`
+```bash
+ssh kali@10.100.122.232
+```
+
+📷 Screenshot:
+
+![alt text](<Screenshots/task4_genkeypair.png>) 
+
+4. Create a file remotely via SSH:
+```bash
+ssh kali@10.100.122.232 "echo NWS23010066 > Ezekiel_Mukhriz.txt"
+```
+
+📷 Screenshot:
+
+![alt text](<Screenshots/task4_genkeypair.png>) 
+
+5. Check identity:
+```bash
+ssh kali@10.100.122.232 "whoami"
+```
+
+📷 Screenshot:
+
+![alt text](<Screenshots/task4_genkeypair.png>) 
