@@ -283,7 +283,7 @@ john --format=raw-md5 --wordlist=hash.txt hash2.txt
 
 ![alt text](Screenshots/task5_hash2-5.png) 
 
-- So the output of thash is `Assalamualaikum Semua`
+- So the output of thash is `Assalamualaikum Semua`.
 
 ### 🔐 Hash 3:
 
@@ -317,4 +317,4 @@ john --format=raw-sha-256 --wordlist=hash.txt hash3.txt
 
 ![alt text](Screenshots/task5_hash3-3.png) ![alt text](image.png)
 
-- So the output of thash is `Begitulah Lumrah Kehidupan`
+- So the output of thash is `Begitulah Lumrah Kehidupan`.
