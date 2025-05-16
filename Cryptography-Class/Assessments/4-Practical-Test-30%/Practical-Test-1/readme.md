@@ -221,7 +221,7 @@ echo "SnZlcmV4IEF2IEpmcmNyZSBFeiBCcnJl" | base64 -d
 
 📷 Screenshot:
 
-![alt text](Screenshots/task5_hash1-2.png) ![alt text](image.png)
+![alt text](Screenshots/task5_hash1-2.png) 
 
 - So the output of the hash is `Senang Je Soaaln Ni Kaaan`.
 
