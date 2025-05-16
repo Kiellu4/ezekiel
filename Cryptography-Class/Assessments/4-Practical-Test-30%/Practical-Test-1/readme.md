@@ -1,8 +1,4 @@
-# 🧪 Practical Test 1 – Cybersecurity
-
-**Name:** Adli Jaafar  
-**Student ID:** [Your Student ID]  
-**Date:** 2025-05-16  
+# 🧪 Practical Test 1
 
 ---
 
@@ -14,3 +10,9 @@
 
 ```bash
 gpg --full-generate-key
+```
+
+- Key type: RSA and RSA
+- Key size: 4096 bits
+- Expiration: 1y
+
