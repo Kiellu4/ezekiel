@@ -126,48 +126,52 @@ gpg --verify signed_message.txt.asc
 
 ### 🔧 Steps:
 
-1. Generate SSH key pair:
+1. Run the following command in Windows Powershell:
 ```bash
-ssh-keygen -C "Ezekiel Mukhriz-NWS23010066"
+ssh-keygen -t rsa
 ```
 
 📷 Screenshot:
 
-![alt text](<Screenshots/task4_genkeypair.png>)  
+![alt text](<Screenshots/task4_1.png>) 
 
-2. Add public key to authorized_keys:
+- just press enter to save it in the default path
+- leave the passphrase empty for passwordless authentication
+
+2. Go to `.ssh` and check the ssh-key file that has been generate:
 ```bash
-cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
-chmod 600 ~/.ssh/authorized_keys
+ls
+cd .ssh
 ```
 📷 Screenshot:
 
-![alt text](<Screenshots/task4_genkeypair.png>)  
+![alt text](<Screenshots/task4_2.png>)  
 
-3. Test login:
-- Go to openshell in windows and insert `username@ip address`
+3. See the content of the `id_rsa.pub`:
 ```bash
-ssh kali@10.100.122.232
-```
-
-📷 Screenshot:
-
-![alt text](<Screenshots/task4_genkeypair.png>) 
-
-4. Create a file remotely via SSH:
-```bash
-ssh kali@10.100.122.232 "echo NWS23010066 > Ezekiel_Mukhriz.txt"
+cat id_rsa.pub
 ```
 
 📷 Screenshot:
 
-![alt text](<Screenshots/task4_genkeypair.png>) 
+![alt text](<Screenshots/task4_3.png>)
+
+- copy it to `authorized_keys` in **Kali Linux**
+
+4. Run the following command in **Kali Linux terminal** and `vim authorized_keys`:
+```bash
+
+```
+
+📷 Screenshot:
+
+![alt text](<Screenshots/task4_4.png>) 
 
 5. Check identity:
 ```bash
-ssh kali@10.100.122.232 "whoami"
+
 ```
 
 📷 Screenshot:
 
-![alt text](<Screenshots/task4_genkeypair.png>) 
+![alt text](<Screenshots/task4_5.png>) 
