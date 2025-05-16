@@ -98,11 +98,11 @@ echo "I, Ezekiel Mukhriz, declare this is my work." > signed_message.txt
 
 📷 Screenshot:
 
-![alt text](<Screenshots/task3_message.png>) 
+![alt text](<Screenshots/task3_message.png>)  
 
 2. Sign the file:
 ```bash
-echo "I, Ezekiel Mukhriz, declare this is my work." > signed_message.txt
+gpg --clearsign signed_message.txt
 ```
 
 📷 Screenshot:
