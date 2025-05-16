@@ -158,18 +158,21 @@ cat id_rsa.pub
 
 - copy it to `authorized_keys` in **Kali Linux**
 
-4. Run the following command in **Kali Linux terminal** and `vim authorized_keys`:
+4. Run the following command in **Kali Linux terminal**:
 ```bash
-
+cd .ssh
+vim authorized_keys
 ```
 
 📷 Screenshot:
 
-![alt text](<Screenshots/task4_4.png>) 
+![alt text](<Screenshots/task4_4-1.png>) 
+![alt text](<Screenshots/task4_4-2.png>) 
 
-5. Check identity:
+5. Make sure set the permission as below in Kali Linux:
 ```bash
-
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/authorized_keys
 ```
 
 📷 Screenshot:
