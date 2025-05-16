@@ -126,7 +126,7 @@ gpg --verify signed_message.txt.asc
 
 ### 🔧 Steps:
 
-1. Run the following command in Windows Powershell:
+1. Run the following command in **Windows Powershell**:
 ```bash
 ssh-keygen -t rsa
 ```
@@ -169,7 +169,7 @@ vim authorized_keys
 ![alt text](<Screenshots/task4_4-1.png>) 
 ![alt text](<Screenshots/task4_4-2.png>) 
 
-5. Make sure set the permission as below in Kali Linux:
+5. Make sure set the permission as below in **Kali Linux**:
 ```bash
 chmod 700 ~/.ssh
 chmod 600 ~/.ssh/authorized_keys
@@ -177,4 +177,14 @@ chmod 600 ~/.ssh/authorized_keys
 
 📷 Screenshot:
 
-![alt text](<Screenshots/task4_5.png>) 
+![alt text](<Screenshots/task4_5.png>)  
+
+6. SSH in **Windowds Powershell** to **Kali Linux**:
+- format command `ssh username@ip address`.
+```bash
+ssh kiel@10.100.122.232
+```
+
+📷 Screenshot:
+
+![alt text](<Screenshots/task4_6.png>)
