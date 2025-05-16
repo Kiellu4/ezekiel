@@ -1,7 +1,7 @@
-from Crypto.PublicKey import RSA
-from Crypto.Signature import pkcs1_15
-from Crypto.Hash import SHA256
-import base64
+from Crypto.PublicKey import RSA    #RSA: Handles RSA public key loading.
+from Crypto.Signature import pkcs1_15   #pkcs1_15: Uses PKCS#1 v1.5 signature scheme (standard for RSA).
+from Crypto.Hash import SHA256  #SHA256: For creating a message hash.
+import base64 #base64: For decoding input (as public key and signature are encoded in Base64).
 
 def verify_signature(message, signature_b64, public_key_b64):
     try:
