@@ -13,9 +13,9 @@ sudo gpg --full-generate-key
 ```
 
 Insert all of this:
-- Key type: RSA and RSA
-- Key size: 4096 bits
-- Expiration: 1y
+- Key type: 1 `RSA and RSA`
+- Key size: 4096 `4096 bits`
+- Expiration: 1y `1 year`
 - Name: Ezekiel Mukhriz
 - Email: mukhrizfitry@gmail.com
 
@@ -30,7 +30,7 @@ Insert all of this:
 ![alt text](<Screenshots/task1_output.png>) 
 
 ```bash
-gpg --list-keys
+sudo gpg --list-keys
 ```
 
 📷 Screenshot:
@@ -71,6 +71,8 @@ gpg -d message.txt.gpg > decrypted.txt
 📷 Screenshot:
 
 ![alt text](<Screenshots/task2_decrypt1.png>) 
+
+- For my passphrase: kiel1234
 
 ![alt text](<Screenshots/task2_decrypt2.png>) 
 
