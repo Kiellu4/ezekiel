@@ -216,7 +216,14 @@ echo "SnZlcmV4IEF2IEpmcmNyZSBFeiBCcnJl" | base64 -d
 
 ![alt text](Screenshots/task5_hash1-1.png) 
 
-- So the output of thash is `Jverex Av Jfrcre Ez Brre`.
+1. Decode the ROT9
+- im using tool cyberchef because the kali cannot do.
+
+📷 Screenshot:
+
+![alt text](Screenshots/task5_hash1-2.png) ![alt text](image.png)
+
+- So the output of the hash is `Senang Je Soaaln Ni Kaaan`.
 
 ### 🔐 Hash 2:
 
