@@ -189,6 +189,12 @@ ssh kiel@10.100.122.232
 
 ![alt text](<Screenshots/task4_6.png>)
 
+### 🔍 Output
+
+📷 Screenshot:
+
+![alt text](<Screenshots/task4_7.png>)
+
 ---
 
 ## ✅ Task 5: Hash Cracking Challenge
@@ -263,4 +269,13 @@ john --wordlist=hash.txt hash1.txt
 
 📷 Screenshot:
 
-![alt text](Screenshots/task5_hash2-4.png) ![alt text](image.png)
+![alt text](Screenshots/task5_hash2-5.png) ![alt text](image.png)
+
+4. Crack the hash using tool `john the ripper`:
+```bash
+john --wordlist=hash.txt hash1.txt
+```
+
+📷 Screenshot:
+
+![alt text](Screenshots/task5_hash2-5.png) ![alt text](image.png)
