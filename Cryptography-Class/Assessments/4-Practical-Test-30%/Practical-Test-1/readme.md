@@ -83,5 +83,42 @@ cat decrypted.txt
 
 ![alt text](<Screenshots/task2_output.png>) 
 
+---
+
+## ✅ Task 3: Sign and Verify a Message
+
+**Objective:** Digitally sign a message and verify authenticity.
+
+### 🔧 Steps:
+
+1. Create the message:
+```bash
+echo "I, Ezekiel Mukhriz, declare this is my work." > signed_message.txt
+```
+
+📷 Screenshot:
+
+![alt text](<Screenshots/task3_message.png>) 
+
+2. Sign the file:
+```bash
+echo "I, Ezekiel Mukhriz, declare this is my work." > signed_message.txt
+```
+
+📷 Screenshot:
+
+![alt text](<Screenshots/task3_sign.png>) 
+
+3. Verify the signature:
+```bash
+gpg --verify signed_message.txt.asc
+```
+
+📷 Screenshot:
+
+![alt text](<Screenshots/task3_verify.png>) 
+
+
+
 
 
