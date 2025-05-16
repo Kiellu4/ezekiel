@@ -7,7 +7,7 @@
 **Objective:** Use `gpg` to generate an RSA key pair tied to your identity.
 
 ### 🔧 Steps:
-
+1. Generate key:
 ```bash
 sudo gpg --full-generate-key
 ```
@@ -29,6 +29,14 @@ Insert all of this:
 
 ![alt text](<Screenshots/task1_output.png>) 
 
+```bash
+gpg --list-keys
+```
+
+📷 Screenshot:
+
+![alt text](Screenshots/task1_output2.png)
+
 ---
 
 ## ✅ Task 2: Encrypt and Decrypt a File
@@ -49,7 +57,6 @@ echo "This file was encrypted by Ezekiel MUkhriz NWS23010066" > message.txt
 2. Encrypt with your own public key:
 ```bash
 gpg -e -r "Ezekiel Mukhriz" message.txt
-
 ```
 
 📷 Screenshot:
@@ -59,17 +66,17 @@ gpg -e -r "Ezekiel Mukhriz" message.txt
 3. Decrypt the file:
 ```bash
 gpg -d message.txt.gpg > decrypted.txt
-
 ```
 
 📷 Screenshot:
 
-![alt text](<Screenshots/task2_decrypt.png>) 
+![alt text](<Screenshots/task2_decrypt1.png>) 
+
+![alt text](<Screenshots/task2_decrypt2.png>) 
 
 4. Verify the output:
 ```bash
 cat decrypted.txt
-
 ```
 
 📷 Screenshot:
