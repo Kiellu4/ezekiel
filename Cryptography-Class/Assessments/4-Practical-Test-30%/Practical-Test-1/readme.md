@@ -188,3 +188,79 @@ ssh kiel@10.100.122.232
 📷 Screenshot:
 
 ![alt text](<Screenshots/task4_6.png>)
+
+---
+
+## ✅ Task 5: Hash Cracking Challenge
+
+**Objective:**  Crack the given hash values.
+
+### 🔧 Steps:
+
+### 🔐 Hash 1:
+
+1. Decode the Base64 String
+```bash
+echo "SnZlcmV4IEF2IEpmcmNyZSBFeiBCcnJl" | base64 -d
+```
+
+📷 Screenshot:
+
+![alt text](Screenshots/task5_hash1-1.png) 
+
+### 🔐 Hash 2:
+
+1. Identify the hash using tool `hash-identifier`:
+```bash
+hash-identifier
+```
+
+📷 Screenshot:
+
+![alt text](Screenshots/task5_hash2-1.png) 
+
+2. Make the wordlist:
+```bash
+vim hash.txt
+```
+
+📷 Screenshot:
+
+![alt text](Screenshots/task5_hash2-2.png)
+
+- Insert all of this into `hash.txt`:
+```
+Bismillah
+Assalamualaikum Semua
+Apa Khabar Semuanya
+Semoga Dalam Keadaan Sihat Hendaknya
+Senang Je Soalan Ni Kaan
+Tapi Kalau Susah
+Begitulah Lumrah Kehidupan
+Ada Yang Senaang
+Ada Yang Susaaah
+Apa2 Pun
+Semoga Berjaya Semuanya
+Alhamdulillah
+Teruskan Usaha
+Jangan Mudah Putus Asa
+Setiap Cabaran Pasti Ada Hikmah
+Percaya Diri Sendiri
+Kejayaan Milik Yang Berusaha
+Semoga Hari Ini
+Lebih Baik Dari Semalam
+InsyaAllah
+```
+
+📷 Screenshot:
+
+![alt text](Screenshots/task5_hash2-3.png) 
+
+3. Crack the hash using tool `john the ripper`:
+```bash
+john --wordlist=hash.txt hash1.txt
+```
+
+📷 Screenshot:
+
+![alt text](Screenshots/task5_hash2-4.png) ![alt text](image.png)
