@@ -216,6 +216,8 @@ echo "SnZlcmV4IEF2IEpmcmNyZSBFeiBCcnJl" | base64 -d
 
 ![alt text](Screenshots/task5_hash1-1.png) 
 
+- So the output of thash is `Jverex Av Jfrcre Ez Brre`.
+
 ### 🔐 Hash 2:
 
 1. Identify the hash using tool `hash-identifier`:
