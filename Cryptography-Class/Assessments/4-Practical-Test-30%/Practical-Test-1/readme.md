@@ -18,6 +18,10 @@ sudo gpg --full-generate-key
 - Name: Ezekiel Mukhriz
 - Email: mukhrizfitry@gmail.com
 
+📷 Screenshot:
+
+![alt text](<Screenshots/task1_input.png>)  
+
 ### 🔍 Output
 
 📷 Screenshot:
