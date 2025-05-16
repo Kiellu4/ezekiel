@@ -225,6 +225,9 @@ hash-identifier
 
 ![alt text](Screenshots/task5_hash2-1.png) 
 
+- Insert '`7b77ca1e2b3e7228a82ecbc7ca0e6b52` in `Hash:` command.
+- The output is `MD5`.
+
 2. Make the wordlist:
 ```bash
 vim hash.txt
@@ -262,20 +265,56 @@ InsyaAllah
 
 ![alt text](Screenshots/task5_hash2-3.png) 
 
-3. Crack the hash using tool `john the ripper`:
+3. Insert the hash into file:
 ```bash
-john --wordlist=hash.txt hash1.txt
+echo "7b77ca1e2b3e7228a82ecbc7ca0e6b52" > hash2.txt
 ```
 
 📷 Screenshot:
 
-![alt text](Screenshots/task5_hash2-5.png) ![alt text](image.png)
+![alt text](Screenshots/task5_hash2-4.png) 
 
 4. Crack the hash using tool `john the ripper`:
 ```bash
-john --wordlist=hash.txt hash1.txt
+john --format=raw-md5 --wordlist=hash.txt hash2.txt
 ```
 
 📷 Screenshot:
 
-![alt text](Screenshots/task5_hash2-5.png) ![alt text](image.png)
+![alt text](Screenshots/task5_hash2-5.png) 
+
+- So the output of thash is `Assalamualaikum Semua`
+
+### 🔐 Hash 3:
+
+1. Identify the hash using tool `hash-identifier`:
+```bash
+hash-identifier
+```
+
+📷 Screenshot:
+
+![alt text](Screenshots/task5_hash3-1.png) 
+
+- Insert `e583cee9ab9d7626c970fd6e9938fcb2d06fbbd12f1c1a3c6902a215808c825c` in `Hash:` command.
+- The output is `SHA-256`.
+
+2. Insert the hash into file:
+```bash
+echo "e583cee9ab9d7626c970fd6e9938fcb2d06fbbd12f1c1a3c6902a215808c825c" > hash3.txt
+```
+
+📷 Screenshot:
+
+![alt text](Screenshots/task5_hash3-2.png) 
+
+4. Crack the hash using tool `john the ripper`:
+```bash
+john --format=raw-sha-256 --wordlist=hash.txt hash3.txt
+```
+
+📷 Screenshot:
+
+![alt text](Screenshots/task5_hash3-3.png) ![alt text](image.png)
+
+- So the output of thash is `Begitulah Lumrah Kehidupan`
