@@ -16,8 +16,8 @@ Insert all of this:
 - Key type: 1 `RSA and RSA`
 - Key size: 4096 `4096 bits`
 - Expiration: 1y `1 year`
-- Name: Ezekiel Mukhriz
-- Email: mukhrizfitry@gmail.com
+- Name: <your name>
+- Email: <your email>
 
 📷 Screenshot:
 
@@ -47,7 +47,7 @@ sudo gpg --list-keys
 
 1. Create the message:
 ```bash
-echo "This file was encrypted by Ezekiel MUkhriz NWS23010066" > message.txt
+echo "This file was encrypted by <your name> <your student id>" > message.txt
 ```
 
 📷 Screenshot:
@@ -56,7 +56,7 @@ echo "This file was encrypted by Ezekiel MUkhriz NWS23010066" > message.txt
 
 2. Encrypt with your own public key:
 ```bash
-gpg -e -r "Ezekiel Mukhriz" message.txt
+gpg -e -r "<your name>" message.txt
 ```
 
 📷 Screenshot:
@@ -72,7 +72,7 @@ gpg -d message.txt.gpg > decrypted.txt
 
 ![alt text](<Screenshots/task2_decrypt1.png>) 
 
-- For my passphrase: kiel1234
+- For my passphrase: <your password>
 
 ![alt text](<Screenshots/task2_decrypt2.png>) 
 
@@ -95,7 +95,7 @@ cat decrypted.txt
 
 1. Create the message:
 ```bash
-echo "I, Ezekiel Mukhriz, declare this is my work." > signed_message.txt
+echo "I, <your name>, declare this is my work." > signed_message.txt
 ```
 
 📷 Screenshot:
@@ -133,6 +133,12 @@ gpg --verify signed_message.txt.asc
 ssh-keygen -t rsa
 ```
 
+replace with this command as I'm not following the instruction from my lecturer.
+
+```bash
+ssh-keygen -C "[Your Name]-[ID]
+```
+
 📷 Screenshot:
 
 ![alt text](<Screenshots/task4_1.png>) 
@@ -141,6 +147,7 @@ ssh-keygen -t rsa
 - leave the passphrase empty for passwordless authentication
 
 2. Go to `.ssh` and check the ssh-key file that has been generate:
+- command `ls` will not show the directory `.ssh` as it is in hidden path. So, we need to use the command `cd .ssh` to navigate it.
 ```bash
 ls
 cd .ssh
@@ -161,6 +168,7 @@ cat id_rsa.pub
 - copy it to `authorized_keys` in **Kali Linux**
 
 4. Run the following command in **Kali Linux terminal**:
+- paste them in `authorized_keys`.
 ```bash
 cd .ssh
 vim authorized_keys
@@ -182,9 +190,8 @@ chmod 600 ~/.ssh/authorized_keys
 ![alt text](<Screenshots/task4_5.png>)  
 
 6. SSH in **Windowds Powershell** to **Kali Linux**:
-- format command `ssh username@ip address`.
 ```bash
-ssh kiel@10.100.122.232
+ssh <username>@<ip address>
 ```
 
 📷 Screenshot:
@@ -192,6 +199,7 @@ ssh kiel@10.100.122.232
 ![alt text](<Screenshots/task4_6.png>)
 
 ### 🔍 Output
+- Test authentication by logging in and creating a file `Your_Name.txt` containing “[Your_Student_ID]”
 
 📷 Screenshot:
 
@@ -216,14 +224,26 @@ echo "SnZlcmV4IEF2IEpmcmNyZSBFeiBCcnJl" | base64 -d
 
 ![alt text](Screenshots/task5_hash1-1.png) 
 
-1. Decode the ROT9
-- im using tool cyberchef because the kali cannot do.
+- So the output for the `Base64` is `Jverex Av Jfrcre Ez Brre`.
+
+2. Decode the ROT9
+- im using tool `cyberchef` because the output of `ROT9` in **Kali Linux** look like mistake.
 
 📷 Screenshot:
 
 ![alt text](Screenshots/task5_hash1-2.png) 
 
-- So the output of the hash is `Senang Je Soaaln Ni Kaaan`.
+- So the final output for the `ROT9` is `Senang Je Soaaln Ni Kaaan`.
+
+## Correction
+
+- Below is the real answer I got from the tool `cyberchef`. I'm sorry for my mistake.
+
+📷 Screenshot:
+
+![alt text](Screenshots/task5_hash1-3.png)
+
+- So the the real answer of the hash is `Senang Je Soalan Ni Kaan`.
 
 ### 🔐 Hash 2:
 
@@ -294,7 +314,7 @@ john --format=raw-md5 --wordlist=hash.txt hash2.txt
 
 ![alt text](Screenshots/task5_hash2-5.png) 
 
-- So the output of thash is `Assalamualaikum Semua`.
+- So the output of the hash is `Assalamualaikum Semua`.
 
 ### 🔐 Hash 3:
 
@@ -328,4 +348,4 @@ john --format=raw-sha-256 --wordlist=hash.txt hash3.txt
 
 ![alt text](Screenshots/task5_hash3-3.png) ![alt text](image.png)
 
-- So the output of thash is `Begitulah Lumrah Kehidupan`.
+- So the output of the hash is `Begitulah Lumrah Kehidupan`.
