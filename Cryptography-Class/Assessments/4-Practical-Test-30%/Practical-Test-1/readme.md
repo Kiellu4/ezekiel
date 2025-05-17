@@ -258,7 +258,7 @@ hash-identifier
 ![alt text](Screenshots/task5_hash2-1.png) 
 
 - Insert '`7b77ca1e2b3e7228a82ecbc7ca0e6b52` in `Hash:` command.
-- The output is `MD5`.
+- The possible hash is `MD5`.
 
 2. Make the wordlist:
 ```bash
@@ -329,7 +329,7 @@ hash-identifier
 ![alt text](Screenshots/task5_hash3-1.png) 
 
 - Insert `e583cee9ab9d7626c970fd6e9938fcb2d06fbbd12f1c1a3c6902a215808c825c` in `Hash:` command.
-- The output is `SHA-256`.
+- The possible hash is `SHA-256`.
 
 2. Insert the hash into file:
 ```bash
