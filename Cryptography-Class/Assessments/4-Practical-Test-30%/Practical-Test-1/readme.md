@@ -347,7 +347,7 @@ john --format=raw-sha-256 --wordlist=hash.txt hash3.txt
 
 📷 Screenshot:
 
-![alt text](Screenshots/task5_hash3-3.png) ![alt text](image.png)
+![alt text](Screenshots/task5_hash3-3.png) 
 
 - So the output of the hash is `Begitulah Lumrah Kehidupan`.
 
