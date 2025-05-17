@@ -235,7 +235,7 @@ echo "SnZlcmV4IEF2IEpmcmNyZSBFeiBCcnJl" | base64 -d
 
 - So the final output for the `ROT9` is `Senang Je Soaaln Ni Kaaan`.
 
-## Correction
+## Correction 
 
 - Below is the real answer I got from the tool `cyberchef`.   
 - I'm sorry for my mistake. The deocde from `Base64` is `Jverex Av Jfrcre Ez Brre` but I paste at the tool `cyberchef` with more letter r. So the output is `Jverex Av Jfrcre Ez Brre`.
@@ -350,3 +350,11 @@ john --format=raw-sha-256 --wordlist=hash.txt hash3.txt
 ![alt text](Screenshots/task5_hash3-3.png) ![alt text](image.png)
 
 - So the output of the hash is `Begitulah Lumrah Kehidupan`.
+
+| Hash                                      |     output      |  
+|-------------------------------------------|-----------------|  
+| SnZlcmV4IEF2IEpmcmNyZSBFeiBCcnJl          |  Senang Je Soalan Ni Kaan |  
+| 7b77ca1e2b3e7228a82ecbc7ca0e6b52          |   Assalamualaikum Semua  |  
+| e583cee9ab9d7626c970fd6e9938fcb2d06fbbd12f1c1a3c6902a215808c825c | Begitulah Lumrah Kehidupan       |
+
+---
