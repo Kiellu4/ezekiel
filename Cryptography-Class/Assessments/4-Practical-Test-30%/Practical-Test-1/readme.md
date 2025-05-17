@@ -238,7 +238,7 @@ echo "SnZlcmV4IEF2IEpmcmNyZSBFeiBCcnJl" | base64 -d
 ## Correction 
 
 - Below is the real answer I got from the tool `cyberchef`.   
-- I'm sorry for my mistake. The deocde from `Base64` is `Jverex Av Jfrcre Ez Brre` but I paste at the tool `cyberchef` with more letter r. So the output is `Jverex Av Jfrcre Ez Brre`.
+- I'm sorry for my mistake. The decode from `Base64` is `Jverex Av Jfrcre Ez Brre` but I paste at the tool `cyberchef` with more letter r. So the output is `Jverex Av Jfrcre Ez Brre`.
 
 📷 Screenshot:
 
