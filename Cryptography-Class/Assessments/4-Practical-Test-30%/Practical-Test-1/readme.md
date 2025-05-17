@@ -133,10 +133,10 @@ gpg --verify signed_message.txt.asc
 ssh-keygen -t rsa
 ```
 
-replace with this command as I'm not following the instruction from my lecturer.
+replace with this command as I'm not following the instruction from my lecturer. I'm sorry, my bad. 🙏
 
 ```bash
-ssh-keygen -C "[Your Name]-[ID]
+ssh-keygen -t rsa -b 4096 -C "[Your Name]-[ID]
 ```
 
 📷 Screenshot:
