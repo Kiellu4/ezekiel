@@ -28,7 +28,12 @@ Welcome to my Cryptography Class repository! Here you’ll find a curated collec
 3. **[Lab-Work-3](https://github.com/Kiellu4/ezekiel/tree/main/Cryptography-Class/Assessments/2-Lab-Works-20%25/Lab-Work-3)**
 4. **[Lab-Work-4](https://github.com/Kiellu4/ezekiel/tree/main/Cryptography-Class/Assessments/2-Lab-Works-20%25/Lab-Work-4)**
 
-## 🧪 Practical Test
+## ✍🏽 Theory Test
+
+1. **[Theory-Test-1](https://github.com/Kiellu4/ezekiel/tree/main/Cryptography-Class/Assessments/3-Theory-Test-30%25/Theory-Test-1)**  
+2. **[Theory-Test-2](https://github.com/Kiellu4/ezekiel/tree/main/Cryptography-Class/Assessments/3-Theory-Test-30%25/Theory-Test-2)** 
+
+## 🛠️ Practical Test
 
 1. **[Practical-Test-1](https://github.com/Kiellu4/ezekiel/tree/main/Cryptography-Class/Assessments/4-Practical-Test-30%25/Practical-Test-1)**  
 2. **[Practical-Test-2](https://github.com/Kiellu4/ezekiel/tree/main/Cryptography-Class/Assessments/4-Practical-Test-30%25/Practical-Test-2)** 
