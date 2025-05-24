@@ -230,7 +230,7 @@ if __name__ == "__main__":
 
 - I named as decrypt_ransomware.py and put this code
 
-```bash
+```python
 from Crypto.Cipher import AES
 import os
 from hashlib import sha256
@@ -255,10 +255,11 @@ def decrypt_file(filepath):
     print(f"Decrypted: {filepath} -> {new_path}")
 
 if __name__ == "__main__":
-    folder = "locked_files/"
+    folder = "."
     for filename in os.listdir(folder):
         if filename.endswith(".enc"):
             decrypt_file(os.path.join(folder, filename))
+
 
 ```
 
