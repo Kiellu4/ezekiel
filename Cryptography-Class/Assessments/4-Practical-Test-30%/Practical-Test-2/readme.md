@@ -41,6 +41,17 @@ Get-FileHash simulated_ransomware.7z
 
 ![alt text](<Screenshots/hash.png>) 
 
+4. The file that has been encrypt
+all the file in type enc so when I decrypt it will be in dec
+- maklumat 1.txt 
+- maklumat 2.txt
+- maklumat 3.txt
+
+
+📷 Screenshot:
+
+![alt text](<Screenshots/encrypt.png>) 
+
 ## 🧪 Static Analysis & Reverse Engineering
 
 ### 🔧 Steps:
