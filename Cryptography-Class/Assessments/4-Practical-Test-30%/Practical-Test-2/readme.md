@@ -77,8 +77,20 @@ Get-FileHash simulated_ransomware.7z
 
 ![alt text](<Screenshots/task1_die.png>)  
 
-- the output shows:
- explain chatgpt
+### 🔍 DIE Output
+
+| Field | Meaning |
+|-------|--------|
+| **PE64** | 64-bit Windows executable file. |
+| **OS: Windows Vista+** | Made for modern Windows (64-bit). |
+| **Linker: Microsoft Linker** | Built with Microsoft compiler tools. |
+| **Compiler: MSVC C/C++** | Has C/C++ parts, probably native code used. |
+| **Language: Python** | The main logic is written in Python. |
+| **Tool: Visual Studio 2022** | Built or packaged using Visual Studio. |
+| **Packer: PyInstaller (modified)** | Python script bundled as EXE using PyInstaller. |
+| **Compressed or Packed** | The real code is hidden in compressed sections. |
+| **Overlay: ZLIB data** | Compressed Python files are hidden inside the EXE. |
+
 
 4. Identify the Type of Malware using Online Resources 
 
@@ -90,4 +102,5 @@ Get-FileHash simulated_ransomware.7z
 
 ![alt text](<Screenshots/task1_virustotal.png>)  
 
-- the result 
+- the result shows `No security vendors flagged this file as malicious` means not malicious.
+
