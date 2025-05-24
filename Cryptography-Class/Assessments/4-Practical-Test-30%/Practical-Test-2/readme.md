@@ -16,7 +16,7 @@
    
     - Detect It Easy (DIE) – To identify compiler and packer.
 
-    - pyinstxtractor-ng – To reverse it from executable(.exe) to .pyc etc.
+    - pyinstxtractor-ng – To decompile it from executable(.exe) to .pyc etc.
 
     - uncompyle6 – To decompile .pyc to .py.
 
@@ -71,7 +71,7 @@ Get-FileHash simulated_ransomware.7z
 
 3. Identify Programming Language or Packing Tool
 
-- Use DIE to inspect the .exe.
+- use DIE to inspect the .exe.
 
 📷 Screenshot:
 
@@ -91,7 +91,6 @@ Get-FileHash simulated_ransomware.7z
 | **Compressed or Packed** | The real code is hidden in compressed sections. |
 | **Overlay: ZLIB data** | Compressed Python files are hidden inside the EXE. |
 
-
 4. Identify the Type of Malware using Online Resources 
 
 - search **VirusTotal** on the web
@@ -103,4 +102,20 @@ Get-FileHash simulated_ransomware.7z
 ![alt text](<Screenshots/task1_virustotal.png>)  
 
 - the result shows `No security vendors flagged this file as malicious` means not malicious.
+
+5. Convert .exe to .pyc using pyinstxtractor
+
+- use **pyinstxtractor** to extract the Python code from the .exe file
+
+``` powershell
+pyinstxtractor-ng.exe .\simulated_ransomware.exe
+```
+
+📷 Screenshot:
+
+![alt text](<Screenshots/task1_pyinstxtractor.png>) 
+
+📷 Screenshot:
+
+![alt text](<Screenshots/extracted.png>) 
 
