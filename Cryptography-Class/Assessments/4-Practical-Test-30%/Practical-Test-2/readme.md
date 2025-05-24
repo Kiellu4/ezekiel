@@ -115,6 +115,19 @@ pyinstxtractor-ng.exe .\simulated_ransomware.exe
 
 ![alt text](<Screenshots/task1_pyinstxtractor.png>) 
 
+### 🧵 PyInstaller Extraction Output
+
+| Output | Meaning |
+|--------|--------|
+| **PyInstaller version: 2.1+** | The EXE was packed using PyInstaller v2.1 or later. |
+| **Python version: 3.8** | The embedded ransomware script was written in Python 3.8. |
+| **Length of package: 8766261 bytes** | Size of the internal PyInstaller archive inside the EXE. |
+| **Found 91 files in CArchive** | CArchive is the container for bundled files like modules and scripts. |
+| **Entry points (e.g. `pyi_rth_*`)** | These are runtime hooks that PyInstaller uses during execution. |
+| **Main script: `simulated_ransomware.pyc`** | This is the compiled Python file containing the ransomware logic. |
+| **Found 526 files in PYZ archive** | The PYZ archive includes compressed Python modules. |
+| **Successfully extracted archive** | All files are extracted and ready for decompilation. |
+
 📷 Screenshot:
 
 ![alt text](<Screenshots/extracted.png>) 
