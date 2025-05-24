@@ -282,7 +282,7 @@ Jadilah perisai digital yang berintegriti dan berkemahiran.
 
 📷 Screenshot:
 
-![alt text](image.png)
+![alt text](Screenshots/image.png)
 
 - dec 2
 ```bash
@@ -294,7 +294,7 @@ Jadilah perisai digital yang berintegriti dan berkemahiran.
 
 📷 Screenshot:
 
-![alt text](image-1.png)
+![alt text](Screenshots/image-1.png)
 
 - dec 3
 ```bash
@@ -307,4 +307,4 @@ Adli, Lecturer Part Time, Feb-Mei 2025
 
 📷 Screenshot:
 
-![alt text](image-2.png)
+![alt text](Screenshots/image-2.png)
