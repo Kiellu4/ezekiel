@@ -174,7 +174,7 @@ uncompyle6.exe -o . .\simulated_ransomware.pyc
 
 📷 Screenshot:
 
-![alt text](<Screenshots/task1_try.png>)  
+![alt text](<Screenshots/task1_uncompyle6.png>)  
 
 - now you can read the ransomware script in .py format.
 
