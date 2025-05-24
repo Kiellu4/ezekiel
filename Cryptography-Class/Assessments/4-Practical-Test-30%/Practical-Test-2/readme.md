@@ -82,9 +82,9 @@ Get-FileHash simulated_ransomware.7z
 
 4. Identify the Type of Malware using Online Resources 
 
-search **VirusTotal** on the web
-copy the hash `simulated_ransomware.7z` and paste it on **VirusTotal**
-- Hash: `4BF1DA4E96EE6DD0306284C7F9CFE30F93113106843F2360052F8FEAF7B5578F`
+- search **VirusTotal** on the web
+- copy the hash `simulated_ransomware.7z` and paste it on **VirusTotal**
+    - Hash: `4BF1DA4E96EE6DD0306284C7F9CFE30F93113106843F2360052F8FEAF7B5578F`
 
 📷 Screenshot:
 
