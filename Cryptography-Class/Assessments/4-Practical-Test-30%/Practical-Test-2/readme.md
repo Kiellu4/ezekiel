@@ -222,3 +222,89 @@ if __name__ == "__main__":
         encrypt_file(path)
 
 ```
+
+9. build decrypt file using python
+
+- I named as decrypt_ransomware.py and put this code
+
+```bash
+from Crypto.Cipher import AES
+import os
+from hashlib import sha256
+
+KEY_SUFFIX = "RahsiaLagi"
+KEY_STR = f"Bukan{KEY_SUFFIX}"
+KEY = sha256(KEY_STR.encode()).digest()[:16]  # Fixing incorrect slice from original
+
+def unpad(data):
+    pad_len = data[-1]
+    return data[:-pad_len]
+
+def decrypt_file(filepath):
+    with open(filepath, "rb") as f:
+        ciphertext = f.read()
+    cipher = AES.new(KEY, AES.MODE_ECB)
+    decrypted = cipher.decrypt(ciphertext)
+    unpadded = unpad(decrypted)
+    new_path = filepath.replace(".enc", ".dec")
+    with open(new_path, "wb") as f:
+        f.write(unpadded)
+    print(f"Decrypted: {filepath} -> {new_path}")
+
+if __name__ == "__main__":
+    folder = "locked_files/"
+    for filename in os.listdir(folder):
+        if filename.endswith(".enc"):
+            decrypt_file(os.path.join(folder, filename))
+
+```
+
+- after all of this, run it use commnad at terminal
+```bash
+python decrypt_ransomware.py
+```
+
+10. Open the file with the decrypted content and verify that the content is correct.
+
+📷 Screenshot:
+
+![alt text](<Screenshots/task1_dec1.png>)  
+
+### 🧵 Final Output
+
+- dec 1
+```bash
+Assalamualaikum semua, pelajar kursus Cryptography semester 5.
+Keselamatan siber bergantung kepada kebijaksanaan anda dalam memahami kriptografi.
+Gunakan ilmu ini untuk melindungi data, sistem, dan masa depan teknologi.
+Jadilah perisai digital yang berintegriti dan berkemahiran.
+```
+
+📷 Screenshot:
+
+![alt text](image.png)
+
+- dec 2
+```bash
+Assalamualaikum semua, pelajar kursus Cryptography semester 5.
+Keselamatan siber bergantung kepada kebijaksanaan anda dalam memahami kriptografi.
+Gunakan ilmu ini untuk melindungi data, sistem, dan masa depan teknologi.
+Jadilah perisai digital yang berintegriti dan berkemahiran.
+```
+
+📷 Screenshot:
+
+![alt text](image-1.png)
+
+- dec 3
+```bash
+Semoga ilmu yang dipelajari menjadi manfaat kepada semua.
+Gunakan kepakaran anda untuk kebaikan, bukan kemudaratan.
+Semoga berjaya di dunia dan akhirat!
+
+Adli, Lecturer Part Time, Feb-Mei 2025
+```
+
+📷 Screenshot:
+
+![alt text](image-2.png)
