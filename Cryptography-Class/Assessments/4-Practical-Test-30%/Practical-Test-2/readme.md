@@ -33,6 +33,10 @@
 Get-FileHash simulated_ransomware.7z 
  ```
 
+📷 Screenshot:
+
+![alt text](<Screenshots/hash.png>) 
+
 ## 🧪 Part 1: Static Analysis & Reverse Engineering
 
 ### 🔧 Steps:
@@ -49,23 +53,23 @@ Get-FileHash simulated_ransomware.7z
 
 📷 Screenshot:
 
-- the file is downloaded and saved in the folder C:\Users\user\Downloads
-
+- the file is downloaded and saved in the folder `C:\Users\user\Downloads`
 - I cut and paste it on anoteher directory `C:\Users\mukhr\Downloads\practical-test-2` 
 
 📷 Screenshot:
 
 ![alt text](<Screenshots/task1_download2.png>) 
 
-2. Extract the file using 7-Zip
+2. Extract the file using 7-Zip and fill the password
 
-- Extract the file and
+- extract the file  
+- the password use `semogaberjaya`
 
 📷 Screenshot:
 
 ![alt text](<Screenshots/task1_download3.png>) 
 
-2. Identify Programming Language or Packing Tool
+3. Identify Programming Language or Packing Tool
 
 - Use DIE to inspect the .exe.
 
@@ -73,3 +77,14 @@ Get-FileHash simulated_ransomware.7z
 
 ![alt text](<Screenshots/task1_die.png>)  
 
+4. Identify the Type of Malware using Online Resources 
+
+- search **VirusTotal** on the web
+- copy the hash `simulated_ransomware.7z` and paste it on **VirusTotal**.
+Hash: `4BF1DA4E96EE6DD0306284C7F9CFE30F93113106843F2360052F8FEAF7B5578F`
+
+📷 Screenshot:
+
+![alt text](<Screenshots/task1_virustotal.png>)  
+
+- the result 
