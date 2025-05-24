@@ -37,7 +37,7 @@ Get-FileHash simulated_ransomware.7z
 
 ![alt text](<Screenshots/hash.png>) 
 
-## 🧪 Part 1: Static Analysis & Reverse Engineering
+## 🧪 Static Analysis & Reverse Engineering
 
 ### 🔧 Steps:
 
@@ -137,7 +137,31 @@ ls
 
 📷 Screenshot:
 
-![alt text](<Screenshots/task1_extracted1.png>) ![alt text]
+![alt text](<Screenshots/task1_extracted1.png>) 
 
 ![alt text](<Screenshots/task1_extracted2.png>) 
 
+7. Read the file `simulated_ransomware.pyc`
+```bash
+ls simulated*
+Get-Content simulated_ransomware.pyc
+```
+
+📷 Screenshot:
+
+![alt text](<Screenshots/task1_read.png>) 
+
+- you can see the file is in .pyc format, which is unreadable. So, we can use tools like **uncompyle6** to change it to .py format to read.
+
+8. Change the path format in windows  10
+- many people have problem need to call the location of the file to use the tools. So, I'm using `system environment variables`, you can search at search bar below from windows10. Then, you need to call the location of the tool and paste it on the path.
+
+### Steps
+- search `system environment variables`
+- click the `environment variables` button
+- click the Variable `path`
+- paste the location of the tool in the `edit environment variable`. example:(`C:\Users\mukhr\Downloads`)
+
+📷 Screenshot:
+
+![alt text](<Screenshots/task1_path.png>) 
