@@ -128,7 +128,16 @@ pyinstxtractor-ng.exe .\simulated_ransomware.exe
 | **Found 526 files in PYZ archive** | The PYZ archive includes compressed Python modules. |
 | **Successfully extracted archive** | All files are extracted and ready for decompilation. |
 
+6. Go to the extracted directory and find the ransomware script
+```bash
+ls
+cd simulated_ransomware.exe_extracted
+ls
+```
+
 📷 Screenshot:
 
-![alt text](<Screenshots/extracted.png>) 
+![alt text](<Screenshots/task1_extracted1.png>) ![alt text]
+
+![alt text](<Screenshots/task1_extracted2.png>) 
 
