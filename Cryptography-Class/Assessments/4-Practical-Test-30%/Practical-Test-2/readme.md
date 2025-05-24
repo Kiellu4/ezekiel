@@ -1,5 +1,8 @@
-@ -1,167 +0,0 @@
 # 🧪 Practical Test 2
+
+## ✅ Summary of Analysis
+
+This test involved performing **static analysis and reverse engineering** on a simulated ransomware binary. The analysis was conducted in a secure Windows 10 virtual environment with networking disabled.
 
 ---
 
@@ -308,3 +311,60 @@ Adli, Lecturer Part Time, Feb-Mei 2025
 📷 Screenshot:
 
 ![alt text](Screenshots/image-2.png)
+
+# 🔐 Cryptography Analysis of Simulated Ransomware
+
+## 📌 Summary of Learning
+
+In this practical test, we performed **static analysis and reverse engineering** on a simulated ransomware binary. The executable was found to be a Python script packaged using **PyInstaller**. After extraction and decompilation, we discovered it used **AES encryption in ECB mode** with a **hardcoded key** to encrypt files. We then wrote a Python script to **decrypt the files** successfully, confirming our analysis.
+
+---
+
+## ❌ 1. Flaws in the Ransomware's Cryptography
+
+The ransomware implementation demonstrates several critical cryptographic flaws:
+
+### 🔑 Hardcoded Key
+- **Issue**: The encryption key is hardcoded in the source code:
+  ```python
+  KEY_SUFFIX = "RahsiaLagi"
+  KEY_STR = f"Bukan{KEY_SUFFIX}"
+  KEY = sha256(KEY_STR.encode()).digest()[:16]
+
+### 🧱 ECB Mode (Electronic Codebook)
+
+```python
+cipher = AES.new(KEY, AES.MODE_ECB)
+```
+
+### ✅ 2. A More Secure Encryption Approach
+A better implementation of file encryption using AES would include:
+
+### ✅ Use AES in a Secure Mode (e.g., GCM or CBC + HMAC)
+Replace ECB with AES-GCM, which provides confidentiality and integrity.
+```python
+from Crypto.Cipher import AES
+from Crypto.Random import get_random_bytes
+
+key = get_random_bytes(32)  # 256-bit key
+cipher = AES.new(key, AES.MODE_GCM)
+ciphertext, tag = cipher.encrypt_and_digest(plaintext)
+```
+
+### ✅ Use a Random IV/Nonce Per File
+- Always generate a new random IV or nonce for each encryption session:
+```python
+nonce = cipher.nonce
+```
+
+### ✅ Store Key Securely or Use Public-Key Cryptography
+- Do not hardcode keys in code.
+
+- Instead, use asymmetric encryption (e.g., RSA) to encrypt a symmetric AES key.
+
+- The ransomware holds the private key.
+
+- Victims cannot decrypt without paying (still unethical but technically stronger).
+
+### ✅ Add File Integrity Checks
+- Use HMAC or authenticated encryption (like AES-GCM) to ensure that tampered files are detected and rejected.
