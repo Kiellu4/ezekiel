@@ -287,7 +287,7 @@ python decrypt_ransomware.py
 
 ### 🧵 Final Output
 
-- dec 1
+- decryption 1
 ```bash
 Assalamualaikum semua, pelajar kursus Cryptography semester 5.
 Keselamatan siber bergantung kepada kebijaksanaan anda dalam memahami kriptografi.
@@ -299,19 +299,18 @@ Jadilah perisai digital yang berintegriti dan berkemahiran.
 
 ![alt text](Screenshots/image.png)
 
-- dec 2
+- decryption 2
 ```bash
-Assalamualaikum semua, pelajar kursus Cryptography semester 5.
-Keselamatan siber bergantung kepada kebijaksanaan anda dalam memahami kriptografi.
-Gunakan ilmu ini untuk melindungi data, sistem, dan masa depan teknologi.
-Jadilah perisai digital yang berintegriti dan berkemahiran.
+Setiap algoritma yang anda pelajari hari ini adalah benteng pertahanan esok. 
+Kuasa penyulitan (encryption) bukan hanya tentang kod, tetapi amanah dalam menjaga maklumat.
+Teruskan usaha, dunia digital menanti kepakaran anda!
 ```
 
 📷 Screenshot:
 
 ![alt text](Screenshots/image-1.png)
 
-- dec 3
+- decryption 3
 ```bash
 Semoga ilmu yang dipelajari menjadi manfaat kepada semua.
 Gunakan kepakaran anda untuk kebaikan, bukan kemudaratan.
